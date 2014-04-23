@@ -1,0 +1,451 @@
+@font-face{
+	font-family: 'Lato-Black';
+	src: url(../css/Lato/Lato-Black.ttf);
+}
+@font-face{
+	font-family: 'Lato-Black';
+	src: url(../css/Lato/Lato-Black.ttf);
+}
+@font-face{
+	font-family: 'Lato-BlackItalic';
+	src: url(../css/Lato/Lato-BlackItalic.ttf);
+}
+@font-face{
+	font-family: 'Lato-Bold';
+	src: url(../css/Lato/Lato-Bold.ttf);
+}
+@font-face{
+	font-family: 'Lato-BoldItalic';
+	src: url(../css/Lato/Lato-BoldItalic.ttf);
+}
+@font-face{
+	font-family: 'Lato-Hairline';
+	src: url(../css/Lato/Lato-Hairline.ttf);
+}
+@font-face{
+	font-family: 'Lato-HairlineItalic';
+	src: url(../css/Lato/Lato-HairlineItalic.ttf);
+}
+@font-face{
+	font-family: 'Lato-Italic';
+	src: url(../css/Lato/Lato-Italic.ttf);
+}
+@font-face{
+	font-family: 'Lato-Light';
+	src: url(../css/Lato/Lato-Light.ttf);
+}
+@font-face{
+	font-family: 'Lato-LightItalic';
+	src: url(../css/Lato/Lato-LightItalic.ttf);
+}
+@font-face{
+	font-family: 'Lato-Regular';
+	src: url(../css/Lato/Lato-Regular.ttf);
+}
+@font-face{
+	font-family: 'Tinet';
+	src: url(../css/Tinet/TungusFont_Tinet.ttf);
+}
+
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body{
+	background: url(../img/custardpie-bg.jpg) no-repeat black;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: 90%;
+	background-position-x: 50%;
+	-moz-background-position-x: 50%;
+}
+
+hr {
+	height: 6px;
+	width: 94%;
+	background-color: #7DF3F3;
+	border: none;
+}
+
+.header{
+	background: url(../img/header.png) repeat-x;
+	text-align: center;
+	min-height: 120px;
+	margin: 0 0 0 40px;
+	width: 91%;
+	background-size: 120px;
+	position: relative;
+}
+
+#logo {
+	width: 385px;
+	height: 82px;
+	top: 25px;
+	left: 175px;
+	position: absolute;
+}
+
+#logo a img{
+	height: 70%;
+}
+
+#ticket{
+	float: left;
+	left: 125px;
+	top: 90px;
+	z-index: 2;
+	position: absolute;
+}
+#ticket a img {
+	width: 85%;
+}
+
+#nav{
+	float: right;
+	position: absolute;
+	top: 40px;
+	left: 55%;
+}
+
+#nav ul{
+	clear: both;
+	float: right;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	list-style: none;
+	position: relative;
+	z-index: 1000;
+}
+
+#nav ul li {
+	display: inline-block;
+}
+
+#nav ul li a{
+	font-family: 'Tinet';
+	font-size: 23px;
+	margin-right: 20px;
+	color: #fff;
+	text-decoration: none;
+}
+#nav ul li a:hover{
+	color: #7DF3F3;
+}
+
+#content{
+	min-height: 100%;
+	margin-bottom: -75px;
+	position: relative;
+	top: -100px;
+}
+
+.footer, #content:after{
+	content: "";
+	display: block;
+}
+
+#content:after{
+	height: 100px;
+}
+
+.mainPic{
+	height: 420px;
+	width: 56.5%;
+	margin-left: -135px;
+	margin-top: 40px;
+	border: 12px solid;
+	border-color: #242323;
+}
+#bandPicBg {
+	z-index: 1;
+	position: relative;
+	height: 500px;
+	width: 400px;
+	margin-left: 415px;
+}
+#home h2{
+	font-family: 'Tinet';
+	margin-top: 15px;
+	color: #7DF3F3;
+	font-weight: normal;
+	font-size: 40px;
+	height: 16px;
+}
+h1{
+	font-family: 'Tinet';
+	margin-top: 0px;
+	color: #7DF3F3;
+	font-weight: normal;
+	font-size: 70px;
+}
+
+#home{
+	position: relative;
+	top: 35px;
+}
+
+#home h3{
+	font-family: 'Tinet';
+	margin-top: 10px;
+	color: #7DF3F3;
+	font-weight: normal;
+	font-size: 28px;
+	height: 16px;
+}
+
+#home h4{
+	font-family: 'Tinet';
+	font-size: 14px;	
+}
+
+h5{
+	font-family: "Tinet";
+	color: white;
+	margin-left: 250px;
+	font-size: 9px;
+}
+
+#home #bandDesc{
+	color: white;
+	font-size: 10px;
+	margin-left: 280px;
+	margin-right: 525px;
+}
+#home #bandDesc h1{
+	margin-top: 25px;
+}
+
+#home #bandMembers{
+	color: white;
+	font-size: 10px;
+	margin-left: 280px;
+}
+#home #upcomingShows{
+	background: url(../img/upcomingshows.png) no-repeat;
+	position: absolute;
+	background-size: 100%;
+	width: 290px;
+	height: 260px;
+	z-index: 0;
+	top: -70px;
+	left: 60%;
+	font-family: 'Tinet';
+}
+#home #upcomingShows h3{
+	font-family: 'Tinet';
+	margin-top: 65px;
+	color: #7DF3F3;
+	text-align: center;
+	font-weight: normal;
+	font-size: 27px;
+	height: 20px;
+}
+#home #upcomingShows ul{
+	color: white;
+	list-style-type: none;
+	font-size: 17px;
+}
+#home #upcomingShows ul li {
+	padding-bottom: 10px;
+}
+#home #upcomingShows ul li:last-child{
+	padding-bottom: 0px;
+}
+#home #upcomingShows a{
+	float: right;
+	margin-right: 60px;
+	color: red;
+	font-size: 14px;	
+	text-decoration: none;
+}
+#home #upcomingShows p{
+	font-family: 'Lato-Regular';
+	color: white;
+	font-size: 12px;
+	width: 471px;
+	margin-left: 305px;
+	top: 450px;
+}
+
+#home #bandMembers img{
+	width: 132px;
+	border: 9px solid;
+	border-color: #242323;
+	margin-right: 15px;
+}
+
+#home #bandMembers .memberRow{
+	margin-top: 35px;
+}
+
+.memberRow .member{
+	display: inline-block;
+}
+
+#home #bandPlaylist{
+	background: url(../img/playlist.png) no-repeat;
+	position: absolute;
+	background-size: 100%;
+	width: 250px;
+	height: 600px;
+	z-index: 0;
+	top: -74px;
+	left: 63%;
+	font-family: 'Tinet';
+}
+
+#bandPlaylist h3{
+	margin-left: 30px;
+}
+
+#bandPlaylist h4{
+	font-size: 15px;
+	margin: 0px !important;
+}	
+
+#bandPlaylist #smallPlaylist{
+	color: white;
+	margin-left: 30px;
+	margin-top: 20px;
+}
+
+#bandPlaylist #smallPlaylist ul{
+	font-family: "Lato-Regular";
+	font-size: 10.5px;	
+	list-style: none;	
+}
+#bandPlaylist #smallPlaylist ul{
+	margin: 0 0 0 25px;
+}
+#bandPlaylist #smallPlaylist ul li{
+	margin-left: -20px;
+}
+
+#linkPlaylist{
+	margin-left: 100px;	
+	color: red;
+}
+
+#schedule, #playlist, #photos{
+	position: relative;
+	top: 15px;
+	z-index: -2;
+	width: 100%;
+}
+
+#scheduleDiv, #playlistDiv, #photoDiv{
+	background: url(../img/int-background.png) no-repeat;
+	background-size: 100%;
+	width: 800px;
+	min-height: 600px;
+	margin-left: 20%;
+	padding-top: 85px;
+}
+
+#scheduleDiv h1, #playlistDiv h1, #photoDiv h1{
+	padding-top: 65px;
+	padding-left: 25px;
+}
+#schedule h4, #playlist h4{
+	font-family: "Tinet";
+	color: white;
+	font-size: 26px;
+}
+#schedule h5, #playlist h5{
+	font-family: "Tinet";
+	color: white;
+	margin-left: 0px !important;
+	font-size: 16px;
+}
+.scheduleDate{
+	margin-left: 25px;
+	display: inline-block;
+	margin-right: 115px;
+}
+.scheduleVenue{
+	display: inline-block;
+	margin-right: 230px;
+}
+.scheduleLocation{
+	display: inline-block;
+}
+.scheduleRowDate{
+	margin-left: 25px;
+	display: inline-block;
+	margin-right: 45px;
+	width: 200px;
+	word-wrap: break-word;
+}
+.scheduleRowVenue{
+	display: inline-block;
+	margin-right: 230px;
+	margin-right: 0px;
+	width: 300px;
+}
+.scheduleRowLocation{
+	display: inline-block;
+	word-wrap: break-word;
+	width: 200px;
+}
+
+#playlistFilter{
+	list-style-type: none;
+}
+#playlistFilter li{
+	display: inline-block;
+	font-family: "Tinet";
+	font-size: 22px;
+	margin-right: 10px;
+}
+#playlistFilter li a{
+	color: #fff;
+}
+#playlistFilter li a:hover{
+ 	color: #7DF3F3;
+}
+.band{
+	display: inline-block;
+	vertical-align: top;
+	padding-right: 25px;
+}
+.band ul{
+	list-style-type: none;
+	color: white;
+	padding-left: 10px;
+}
+#playlistDiv h2{
+	font-family: "Tinet";
+	color: white;
+	font-size: 25px;
+}
+.songlist{
+	margin-left: 25px;
+}
+
+#spnLargePhoto{
+	z-index: 1;
+	position: relative;
+	left: 35px;
+	background-color: #ffff;
+}
+.largePic{
+	height: 420px;
+	width: 91%;
+	border: 12px solid;
+	border-color: #242323;
+}
+.divSmallImg{
+	position: relative;
+	top: 30px;
+	left: 35px;
+	display: inline-block;
+	padding: 0 24px 24px 0;
+}
+.smallImg{
+	height: 130px;
+	border: 2px solid;
+}
