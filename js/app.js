@@ -26,12 +26,6 @@ Ember.Handlebars.helper('formatScheduleDate', function(date){
 			"October", "November", "December");
 		var eventDate = moment(date);
 		return eventDate.format("dddd MMMM Do YYYY,");
-		// var day = eventDate.getDay();
-		// var currentDate = eventDate.getDate();
-		// var month = eventDate.getMonth();
-		// var year = eventDate.getFullYear();
-		// var result = d_names[day] + " " + m_names[month] + " " + currentDate + " " + year + ", ";
-		// return result;
 	}
 );
 
@@ -240,10 +234,6 @@ CustardPie.ScheduleLazyDataSource = Ember.ArrayProxy.extend({
 				this.set('_picker', this.$().datepicker());
 				return this.$().focus();
 			}
-			// willDestroyElement: function(){
-			// 	picker = this.get('_picker');
-
-			// }
 		}),
 		onRowContentDidChange: Ember.observer(function() {
 			return this.set('isEditing', false);
@@ -284,6 +274,13 @@ CustardPie.ScheduleLazyDataSource = Ember.ArrayProxy.extend({
 		click: function(event) {
 			this.set('isEditing', true);
 			return event.stopPropagation();
+		}
+	});
+
+	CustardPie.RemoveTableCell = Ember.Table.TableCell.extend({
+		templateName: 'removeCell',
+		click: function(event){
+			this.get('column').setCellContent(this.get('rowContent', 0));
 		}
 	});
 }).call(this);

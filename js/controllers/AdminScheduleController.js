@@ -35,11 +35,19 @@ CustardPie.AdminScheduleController = Ember.ArrayController.extend({
 				return row.set('time', value);
 			}
 		});
+		removeColumn = Ember.Table.ColumnDefinition.create({
+			columnWidth: 50,
+			tableCellViewClass: 'CustardPie.RemoveTableCell',
+			setCellContent: function(row, value){
+				row.deleteRecord();
+				row.save();
+			}
+		})
 	    columns = columnNames.map(function(key, index) {
 	      var name;
 	      name = key.charAt(0).toUpperCase() + key.slice(1);
 	      return Ember.Table.ColumnDefinition.create({
-	        columnWidth: 300,
+	        columnWidth: 285,
 	        headerCellName: name,
 	        tableCellViewClass: 'CustardPie.ScheduleTableEditableCell',
 	        contentPath: key,
@@ -50,28 +58,15 @@ CustardPie.AdminScheduleController = Ember.ArrayController.extend({
 	        }
 	      });
 	    });
+	    columns.push(removeColumn);
 		columns.unshift(timeColumn);	    
 	    columns.unshift(dateColumn);
 	    return columns;
 	}).property(),
-	// content: Ember.computed(function(){
-	// 	var store = this.get('store');
-	// 	var ds = CustardPie.ScheduleLazyDataSource.create({
-	// 		content: new Array(this.get('numRows')),
-	// 		store: store
-	// 	});
-	// 	return ds;
-	// }).property('numRows'),
 	sortedContent: Ember.computed.sort('content.@each.date', function(a, b){
-
-	    //the this keyword does not work here, 
-	    //throws "Object #<Object> has no method 'get'"
-	    //so we use the Ember keyword to get it working
-
 	   	var ap = moment(Ember.get(a, 'date')),
 	       	bp = moment(Ember.get(b, 'date'))
 
-	  //we return morning before afternoon times 
 	    if(ap !== bp) {
 	      return ap - bp;
 	    }
@@ -98,6 +93,9 @@ CustardPie.AdminScheduleController = Ember.ArrayController.extend({
 			this.set('newTime', '');
 			this.set('newVenue', '');
 			this.set('newAddress', '');
-		}		
+		},
+		removeEvent: function(){
+			alert("test32");
+		}	
 	}
 });
