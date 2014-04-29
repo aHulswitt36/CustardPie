@@ -51,6 +51,24 @@
 	line-height: 50px;
 }
 
+.nav-header{
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #999999;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  padding-bottom: 10px !important;
+}
+
+h1{
+  font-size: 37.5px;
+  margin: 10px 0;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+
 .adminLogo{
 	font-family: "Tinet";
 	font-size: 40px;
@@ -66,22 +84,22 @@
 }
 
 .span3{
-	display: inline-block;
-	width: 17% !important;
-	position: relative;
-	left: 50px;
+	width: 15% !important;
+  position: relative;
+  left: 70px;
+  float: left;
+  top: 5px;
 }
 .span9{
 	display: inline-block;
 	position: relative;
-	left: 25px;
-}
-.nav-header{
-	font-size: 20px;
+	left: 70px;
+  width: 75%;
 }
 .nav li{
 	font-size: 18px;
 	padding: 2px;
+  line-height: 7px;
 }
 
 #addEvent{

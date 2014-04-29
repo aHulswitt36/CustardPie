@@ -6,7 +6,7 @@ CustardPie.AdminScheduleController = Ember.ArrayController.extend({
 		var columnNames, columns, dateColumn;
 		columnNames = ['venue', 'location'];
 		dateColumn = Ember.Table.ColumnDefinition.create({
-			columnWidth: 200,
+			columnWidth: $(window).width() / 10,
 			headerCellName: 'Date',
 			isSortable: true,
 			tableCellViewClass: 'CustardPie.DatePickerTableCell',
@@ -24,7 +24,7 @@ CustardPie.AdminScheduleController = Ember.ArrayController.extend({
 			}
 		});
 		timeColumn = Ember.Table.ColumnDefinition.create({
-			columnWidth: 150,
+			columnWidth: $(window).width() / 10,
 			headerCellName: 'Time',
 			tableCellViewClass: 'CustardPie.TimePickerTableCell',
 			contentPath: 'time',
@@ -47,7 +47,7 @@ CustardPie.AdminScheduleController = Ember.ArrayController.extend({
 	      var name;
 	      name = key.charAt(0).toUpperCase() + key.slice(1);
 	      return Ember.Table.ColumnDefinition.create({
-	        columnWidth: 285,
+	        columnWidth: $(window).width() / 4,
 	        headerCellName: name,
 	        tableCellViewClass: 'CustardPie.ScheduleTableEditableCell',
 	        contentPath: key,
