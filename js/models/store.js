@@ -3,6 +3,6 @@ CustardPie.Store = DS.Store.extend({
 	adapter: "CustardPie.ApplicationAdapter"
 });
 
-CustardPie.ApplicationAdapter = DS.LSAdapter.extend();
+//CustardPie.ApplicationAdapter = DS.LSAdapter.extend();
 
-//CustardPie.LSAdapter = DS.LSAdapter.extend();
+CustardPie.ApplicationAdapter = DS.FixtureAdapter.extend();

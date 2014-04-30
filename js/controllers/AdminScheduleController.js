@@ -37,7 +37,7 @@ CustardPie.AdminScheduleController = Ember.ArrayController.extend({
 		});
 		removeColumn = Ember.Table.ColumnDefinition.create({
 			columnWidth: 50,
-			tableCellViewClass: 'CustardPie.RemoveTableCell',
+			tableCellViewClass: 'CustardPie.RemoveActionTableCell',
 			setCellContent: function(row, value){
 				row.deleteRecord();
 				row.save();
