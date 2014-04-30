@@ -1,22 +1,5 @@
 window.CustardPie = Ember.Application.create();
 
-
-CustardPie.Router.map(function(){
-	this.resource('default', { path: '/' }, function(){
-		this.resource('home', { path: '/'});
-		this.resource('schedule');
-		this.resource('playlist');
-		this.resource('photos');
-	});
-	
-	this.resource('admin', { path: '/admin' }, function(){
-		this.resource('adminHome', { path: '/' });
-		this.resource('adminSchedule', {path: '/schedule'});
-		this.resource('adminPlaylist', {path: '/playlist'});
-		this.resource('adminPhotos', {path:'/photos'});
-	});
-});
-
 Ember.Handlebars.helper('formatScheduleDate', function(date){
 		var d_names = new Array("Sun", "Mon", "Tues",
 			"Wed", "Thur", "Fri", "Sat");
@@ -122,34 +105,6 @@ var playlist = [
 	}	
 ]
 
-//this is a temp model for photos
-
-CustardPie.ScheduleRoute = Ember.Route.extend({
-	model: function(){
-		return this.store.find('schedule');
-	}
-});
-
-CustardPie.PlaylistRoute = Ember.Route.extend({
-	model: function(){
-		return playlist;
-	}
-});
-
-
-//ADMIN ROUTES
-CustardPie.AdminScheduleRoute = Ember.Route.extend({
-	model: function(){
-		return this.store.find('schedule');
-	}
-});
-
-CustardPie.AdminPlaylistRoute = Ember.Route.extend({
-	model: function(){
-		return this.store.find('playlist');
-	}
-})
-
 CustardPie.ScheduleLazyDataSource = Ember.ArrayProxy.extend({
 	store: null,
 	foundRows: false,
@@ -189,98 +144,3 @@ CustardPie.ScheduleLazyDataSource = Ember.ArrayProxy.extend({
 		return content[index];
 	}
 });
-
-(function(){
-	//Editable Table Cells
-	CustardPie.ScheduleTableEditableCell = Ember.Table.TableCell.extend({
-		//className: 'editable-table-cell',
-		templateName: 'editableScheduleCell',
-		isEditing: false,
-		type: 'text',
-		innerTextField: Ember.TextField.extend({
-			typeBinding: 'parentView.type',
-			valueBinding: 'parentView.cellContent',
-			didInsertElement: function() {
-			  return this.$().focus();
-			},
-			focusOut: function(event) {
-			  return this.set('parentView.isEditing', false);
-			}
-		}),
-		onRowContentDidChange: Ember.observer(function() {
-			return this.set('isEditing', false);
-    	}, 'rowContent'),
-		click: function(event) {
-			this.set('isEditing', true);
-			return event.stopPropagation();
-		}
-	});
-
-	CustardPie.DatePickerTableCell = Ember.Table.TableCell.extend({
-		templateName: 'editableDateCell',
-		isEditing: false,
-		type: 'date',
-		innerTextField: Ember.TextField.extend({
-			_picker: null,
-			modelChangedValue: function(){
-				var picker = this.get('_picker');
-				if(picker){
-					picker.datepicker("setDate", this.get("value"));
-				}
-				this.set('parentView.isEditing', false);
-			}.observes("value"),
-			valueBinding: 'parentView.cellContent',
-			didInsertElement: function(){
-				this.set('_picker', this.$().datepicker());
-				return this.$().focus();
-			}
-		}),
-		onRowContentDidChange: Ember.observer(function() {
-			return this.set('isEditing', false);
-	    }, 'rowContent'),
-		click: function(event) {
-			this.set('isEditing', true);
-			return event.stopPropagation();
-		}
-	});
-
-	CustardPie.TimePickerTableCell = Ember.Table.TableCell.extend({
-		templateName: 'editableTimeCell',
-		isEditing: false,
-		type: 'text',
-		innerTextField: Ember.TextField.extend({
-			_picker: null,
-			modelChangedValue: function(){
-			    var picker = this.get("_picker");
-			    if (picker){
-			      	picker.timepicker('setTime', this.get("value"));
-			    }
-				this.set('parentView.isEditing', false);
-		  	}.observes("value"),
-			valueBinding: 'parentView.cellContent',
-			didInsertElement: function() {
-				this.set('_picker', this.$().timepicker({
-					'minTime': '6:00pm',
-					'maxTime': '1:00am',
-					'timeFormat': 'g:i a'
-				}));
-				
-			  	return this.$().focus();
-			}
-		}),
-		onRowContentDidChange: Ember.observer(function() {
-			return this.set('isEditing', false);
-	    }, 'rowContent'),
-		click: function(event) {
-			this.set('isEditing', true);
-			return event.stopPropagation();
-		}
-	});
-
-	CustardPie.RemoveTableCell = Ember.Table.TableCell.extend({
-		templateName: 'removeCell',
-		click: function(event){
-			this.get('column').setCellContent(this.get('rowContent', 0));
-		}
-	});
-}).call(this);
