@@ -23,7 +23,7 @@ CustardPie.ScheduleRoute = Ember.Route.extend({
 
 CustardPie.PlaylistRoute = Ember.Route.extend({
 	model: function(){
-		return playlist;
+		return this.store.find('band');
 	}
 });
 

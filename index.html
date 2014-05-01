@@ -221,11 +221,11 @@
 						<li><a href="A">Y</a></li>
 						<li><a href="A">Z</a></li>
 					</ul>
-					{{#each model}}
-						<div {{bindAttr id="letter"}} class="songlist">
-							{{#each bands}}
+					{{#each groupedByBandName}}
+						<div {{bind-attr id="group"}} class="songlist">
+							{{#each content}}
 								<div class="band">
-									<h2>{{bandName}}</h2>
+									<h2>{{name}}</h2>
 									<ul>
 										{{#each songs}}
 											<li>{{title}}</li>
@@ -399,6 +399,7 @@
         <script src="js/models/band.js"></script>
         <script src="js/models/song.js"></script>
         <script src="js/vendor/bootstrap.js"></script>
+        <script src="js/controllers/PlaylistController.js"></script>
         <script src="js/controllers/AdminScheduleController.js"></script>
         <script src="js/views/adminScheduleView.js"></script>
         <script src="js/views/ScheduleTableEditableCell.js"></script>
