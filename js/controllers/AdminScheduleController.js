@@ -49,7 +49,7 @@ CustardPie.AdminScheduleController = Ember.ArrayController.extend({
 	      return Ember.Table.ColumnDefinition.create({
 	        columnWidth: $(window).width() / 4,
 	        headerCellName: name,
-	        tableCellViewClass: 'CustardPie.ScheduleTableEditableCell',
+	        tableCellViewClass: 'CustardPie.EditableTableCell',
 	        contentPath: key,
 	        setCellContent: function(row, value) {
 	        	row.set(key, value);

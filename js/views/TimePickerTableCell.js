@@ -20,7 +20,10 @@ CustardPie.TimePickerTableCell = Ember.Table.TableCell.extend({
 				}));
 				
 			  	return this.$().focus();
-			}
+			},
+    	focusOut: function(event) {
+    	  return this.set('parentView.isEditing', false);
+    	}
 		}),
 		onRowContentDidChange: Ember.observer(function() {
 			return this.set('isEditing', false);
