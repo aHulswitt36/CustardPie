@@ -37,6 +37,6 @@ CustardPie.AdminScheduleRoute = Ember.Route.extend({
 
 CustardPie.AdminPlaylistRoute = Ember.Route.extend({
 	model: function(){
-		return playlist;//this.store.find('playlist');
+		return this.store.find('band');
 	}
 })
