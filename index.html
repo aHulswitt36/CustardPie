@@ -384,30 +384,63 @@
       	<div class="col-md-12">
         	<div class="example-container">
             <div class="ember-table-example-container" style="height:500px; ">
-  							{{table-component hasHeader=true hasFooter=false numFixedColumns=0 rowHeight=35 columnsBinding="columns" contentBinding="content"}}
+  							{{view CustardPie.TableComponent contentBinding="data"}}
 						</div>
 					</div>
 				</div>
 			</div>
 		</script>
   
-    <script type="text/x-handlebars" data-template-name="bandCell">
-      <div class="ember-table-cell-container" {{bindAttr style="view.paddingStyle"}}>
-        <span {{bindAttr class=":ember-table-toggle-span view.row.isLeaf::ember-table-toggle
-          view.row.isCollapsed:ember-table-expand:ember-table-collapse"}}
-          {{action toggleCollapse view.row}}>
-          <i class="icon-caret-down ember-table-toggle-icon"></i>
-        </span>
+  <script type="text/x-handlebars" data-template-name="bandCell">
+    <div class="ember-table-cell-container" {{bindAttr style="view.paddingStyle"}}>
+      <span {{bind-attr class=":ember-table-toggle-span view.row.isLeaf::ember-table-toggle
+        view.row.isCollapsed:ember-table-expand:ember-table-collapse"}}
+        {{action toggleCollapse view.row}}>
+        <i class="icon-caret-down ember-table-toggle-icon"></i>
+      </span>
+      <span class="ember-table-content">
+        {{#if view.isEditing}}
+			    {{view view.innerTextField}}
+			  {{else}}
+			    <span class='content'>{{view.cellContent}}</span>
+			  {{/if}}
+      </span>
+    </div>
+  </script>
+    
+  <script type="text/x-handlebars" data-template-name="bandHeaderCell">
+    <div class="ember-table-cell-container">
+      <span {{bind-attr class=":ember-table-toggle-span :ember-table-toggle
+          isCollapsed:ember-table-expand:ember-table-collapse"}}
+          {{action toggleTableCollapse}}>
+        <i class="icon-caret-down ember-table-toggle-icon"></i>
+      </span>
+      <div class="ember-table-header-content-container">
         <span class="ember-table-content">
-          {{#if view.isEditing}}
-  			    {{view view.innerTextField}}
-  			  {{else}}
-  			    <span class='content'>{{view.cellContent}}</span>
-  			  {{/if}}
+          {{view.column.headerCellName}}
         </span>
       </div>
-    </script>
+    </div>
+  </script>
 
+  <script type="text/x-handlebars" data-template-name="songCell">
+    <div class="ember-table-cell-container">
+      <span class="ember-table-content">
+        {{view.cellContent}}
+      </span>
+    </div>
+  </script>
+  
+  <script type="text/x-handlebars" data-template-name="songHeaderCell">
+    <div class="ember-table-cell-container">
+      <div class="ember-table-header-content-container">
+        <span class="ember-table-content">
+          {{view.content.headerCellName}}
+        </span>
+      </div>
+    </div>
+  </script>
+  
   <script src="js/vendor/jquery-1.10.2.js"></script>
 	<script src="js/vendor/jquery.timepicker.js"></script>
   <script src="js/vendor/handlebars-1.1.2.js"></script>
@@ -428,10 +461,15 @@
   <script src="js/vendor/bootstrap.js"></script>
   <script src="js/controllers/PlaylistController.js"></script>
   <script src="js/controllers/AdminScheduleController.js"></script>
+  <script src="js/controllers/AdminPlaylistController.js"></script>
   <script src="js/views/adminScheduleView.js"></script>
+  <script src="js/views/adminPlaylistView.js"></script>
   <script src="js/views/EditableTableCell.js"></script>
   <script src="js/views/DatePickerTableCell.js"></script>
   <script src="js/views/TimePickerTableCell.js"></script>
   <script src="js/views/RemoveActionTableCell.js"></script>
+  <script src="js/views/BandCell.js"></script>
+  <script src="js/views/SongCell.js"></script>
+  <script src="js/views/PlaylistTableBandRow.js"></script>
 </body>
 </html>

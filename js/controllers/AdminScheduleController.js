@@ -1,9 +1,9 @@
 CustardPie.AdminScheduleController = Ember.ArrayController.extend({
 	sortProperties: ['date'],
-  	sortAscending: true ,
+	sortAscending: true ,
 	numRows: 100,
 	columns: Ember.computed(function() {
-		var columnNames, columns, dateColumn;
+		var columnNames, columns, dateColumn, timeColumn, removeColumn;
 		columnNames = ['venue', 'location'];
 		dateColumn = Ember.Table.ColumnDefinition.create({
 			columnWidth: $(window).width() / 10,
@@ -42,26 +42,26 @@ CustardPie.AdminScheduleController = Ember.ArrayController.extend({
 				row.deleteRecord();
 				row.save();
 			}
-		})
-	    columns = columnNames.map(function(key, index) {
-	      var name;
-	      name = key.charAt(0).toUpperCase() + key.slice(1);
-	      return Ember.Table.ColumnDefinition.create({
-	        columnWidth: $(window).width() / 4,
-	        headerCellName: name,
-	        tableCellViewClass: 'CustardPie.EditableTableCell',
-	        contentPath: key,
-	        setCellContent: function(row, value) {
-	        	row.set(key, value);
-	        	row.save();
-	          	return row.set(key,value);
-	        }
-	      });
+		});
+	  columns = columnNames.map(function(key, index) {
+	    var name;
+	    name = key.charAt(0).toUpperCase() + key.slice(1);
+	    return Ember.Table.ColumnDefinition.create({
+	      columnWidth: $(window).width() / 4,
+	      headerCellName: name,
+	      tableCellViewClass: 'CustardPie.EditableTableCell',
+	      contentPath: key,
+	      setCellContent: function(row, value) {
+	      	row.set(key, value);
+	      	row.save();
+	        	return row.set(key,value);
+	      }
 	    });
-	    columns.push(removeColumn);
+	  });
+	  columns.push(removeColumn);
 		columns.unshift(timeColumn);	    
-	    columns.unshift(dateColumn);
-	    return columns;
+	  columns.unshift(dateColumn);
+    return columns;
 	}).property(),
 	sortedContent: Ember.computed.sort('content.@each.date', function(a, b){
 	   	var ap = moment(Ember.get(a, 'date')),

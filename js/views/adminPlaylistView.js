@@ -1,0 +1,1 @@
+CustardPie.AdminPlaylistView = Ember.View.extend({});
