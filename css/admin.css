@@ -105,3 +105,17 @@ h1{
 #addEvent{
 	display: none;
 }
+
+.ember-table-content input{
+  width: 100%;
+}
+
+.removeBtn{
+  width:40px;
+}
+
+.bandSongsLink{
+  position: relative;
+  float: left;
+  left: 20%;
+}

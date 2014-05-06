@@ -9,7 +9,9 @@
 	this.resource('admin', { path: '/admin' }, function(){
 		this.resource('adminHome', { path: '/' });
 		this.resource('adminSchedule', {path: '/schedule'});
-		this.resource('adminPlaylist', {path: '/playlist'});
+		this.resource('adminPlaylist', {path: '/playlist'}, function(){
+      this.resource('adminBand', {path: '/band/:band_id'});
+    });
 		this.resource('adminPhotos', {path:'/photos'});
 	});
 });
