@@ -94,9 +94,6 @@ CustardPie.AdminScheduleController = Ember.ArrayController.extend({
 			this.set('newTime', '');
 			this.set('newVenue', '');
 			this.set('newAddress', '');
-		},
-		removeEvent: function(){
-			alert("test32");
-		}	
+		}
 	}
 });

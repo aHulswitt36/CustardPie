@@ -1,4 +1,5 @@
 CustardPie.AdminPlaylistController = Ember.ArrayController.extend({
+  content: [],
   sortProperties: ['name'],
 	sortAscending: true ,
   columns: Ember.computed(function() {
@@ -7,16 +8,18 @@ CustardPie.AdminPlaylistController = Ember.ArrayController.extend({
     songsColumn = Ember.Table.ColumnDefinition.create({
       headerCellName: 'Songs',
 	    tableCellViewClass: 'CustardPie.SongsCell',
-      contentPath: 'id',
-	    setCellContent: function(row, value) {
-	      	
-	    }
-
+      contentPath: 'id'
     });
 		removeColumn = Ember.Table.ColumnDefinition.create({
 			columnWidth: 40,
 			tableCellViewClass: 'CustardPie.RemoveActionTableCell',
 			setCellContent: function(row, value){
+        var songs = row.get('songs').toArray();
+        songs.forEach(function(song){
+          song.deleteRecord();
+          songs.removeObject(song);
+          song.save();
+        });
 				row.deleteRecord();
 				row.save();
 			}
@@ -30,16 +33,27 @@ CustardPie.AdminPlaylistController = Ember.ArrayController.extend({
 	      tableCellViewClass: 'CustardPie.EditableTableCell',
 	      contentPath: 'name',
 	      setCellContent: function(row, value) {
-	      	row.set(key, value);
+	      	row.set('name', value);
 	      	row.save();
-	        	return row.set(key,value);
+	        return row.set('name',value);
 	      }
 	    });
 	  });
     columns.push(songsColumn);
 	  columns.push(removeColumn);
 		return columns;
-	}).property()
-  
+	}).property(),
+   actions: {
+    saveNewBand: function(model){
+      var name = model.name;
+      
+      var newBand = this.store.createRecord('band', {
+        name: name
+      });
+      
+      newBand.save();
+      this.set('newName', '');
+    }
+  }
 });
 

@@ -102,7 +102,7 @@ h1{
   line-height: 7px;
 }
 
-#addEvent{
+#addEvent, #addSong, #addBand{
 	display: none;
 }
 

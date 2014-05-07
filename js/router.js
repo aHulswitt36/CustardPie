@@ -9,10 +9,9 @@
 	this.resource('admin', { path: '/admin' }, function(){
 		this.resource('adminHome', { path: '/' });
 		this.resource('adminSchedule', {path: '/schedule'});
-		this.resource('adminPlaylist', {path: '/playlist'}, function(){
-      this.resource('adminBand', {path: '/band/:band_id'});
-    });
+		this.resource('adminPlaylist', {path: '/playlist'});
 		this.resource('adminPhotos', {path:'/photos'});
+    this.resource('adminBand', {path: '/band/:band_id'});
 	});
 });
 
@@ -41,4 +40,11 @@ CustardPie.AdminPlaylistRoute = Ember.Route.extend({
 	model: function(){
 		return this.store.find('band');
 	}
-})
+});
+
+CustardPie.AdminBandRoute = Ember.Route.extend({
+  model: function(params){
+     var band = this.store.find('band', params.band_id);
+     return band;
+  }
+});
