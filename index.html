@@ -337,11 +337,6 @@
 			</div>
 		</script>
 
-
-		<script type="text/x-handlebars" id="adminPhotos">
-			<h1>Photos</h1>
-		</script>
-
 		<script type="text/x-handlebars" data-template-name="editableScheduleCell">
 			<span class="ember-table-content">
 			  {{#if view.isEditing}}
@@ -379,48 +374,70 @@
 		</script>
   
     <script type="text/x-handlebars" id="adminPlaylist">
-	  <h1>Playlist</h1>
-    <div class="row">
-  	  <div class="col-md-12">
-    	  <div class="example-container">
-          <button id="btnAddBand" class="btn btn-default" {{action "addBand" target="view"}}>Add Band</button>
-          <div id="addBand">
-            {{view Ember.TextField id="addName" placeholder="Band Name" valueBinding="newName"}}
-                			
-            <br/>
-            <button id="btnSaveNewBand" class="btn btn-default" {{action "saveBand" target="view"}}>Save New Band</button>
-          </div>
-      		<div class="ember-table-example-container" style="height:500px; width:650px">
-      	    {{table-component hasHeader=true hasFooter=false numFixedColumns=0 rowHeight=35 columnsBinding="columns" contentBinding="content"}}
-        	</div>
-
-			  </div>
-			</div>
-		</div>    
-	</script>
- 
-  <script type="text/x-handlebars" data-template-name="songsCell">    
-      {{#link-to 'adminBand' view.bandId classNames="btn btn-default bandSongsLink"}}Edit Songs{{/link-to}} 
-  </script>
+  	  <h1>Playlist</h1>
+      <div class="row">
+    	  <div class="col-md-12">
+      	  <div class="example-container">
+            <button id="btnAddBand" class="btn btn-default" {{action "addBand" target="view"}}>Add Band</button>
+            <div id="addBand">
+              {{view Ember.TextField id="addName" placeholder="Band Name" valueBinding="newName"}}
+                  			
+              <br/>
+              <button id="btnSaveNewBand" class="btn btn-default" {{action "saveBand" target="view"}}>Save New Band</button>
+            </div>
+        		<div class="ember-table-example-container" style="height:500px; width:650px">
+        	    {{table-component hasHeader=true hasFooter=false numFixedColumns=0 rowHeight=35 columnsBinding="columns" contentBinding="content"}}
+          	</div>
   
-  <script type="text/x-handlebars" id="adminBand">
-    <h1>{{name}}</h1>
-    <div class="row">
-  	  <div class="col-md-12">
-    	  <div class="example-container">
-          <button id="btnAddSong" class="btn btn-default" {{action "addSong" target="view"}}>Add Song</button>
-          <div id="addSong">
-            {{view Ember.TextField id="addTitle" placeholder="Song Title" valueBinding="newTitle"}}                			
-            <br/>
-            <button id="btnSaveNewSong" class="btn btn-default" {{action "saveSong" target="view"}}>Save New Song</button>
-          </div>
-      		<div class="ember-table-example-container" style="height:500px; width: 450px">
-					  {{table-component hasHeader=true hasFooter=false numFixedColumns=0 rowHeight=35 columnsBinding="columns" contentBinding="content.songs"}}
-					</div>
-			  </div>
-			</div>
-		</div>
-  </script>
+  			  </div>
+  			</div>
+  		</div>    
+  	</script>
+ 
+    <script type="text/x-handlebars" data-template-name="songsCell">    
+        {{#link-to 'adminBand' view.bandId classNames="btn btn-default bandSongsLink"}}Edit Songs{{/link-to}} 
+    </script>
+    
+    <script type="text/x-handlebars" id="adminBand">
+      <h1>{{name}}</h1>
+      <div class="row">
+    	  <div class="col-md-12">
+      	  <div class="example-container">
+            <button id="btnAddSong" class="btn btn-default" {{action "addSong" target="view"}}>Add Song</button>
+            <div id="addSong">
+              {{view Ember.TextField id="addTitle" placeholder="Song Title" valueBinding="newTitle"}}                			
+              <br/>
+              <button id="btnSaveNewSong" class="btn btn-default" {{action "saveSong" target="view"}}>Save New Song</button>
+            </div>
+        		<div class="ember-table-example-container" style="height:500px; width: 450px">
+  					  {{table-component hasHeader=true hasFooter=false numFixedColumns=0 rowHeight=35 columnsBinding="columns" contentBinding="content.songs"}}
+  					</div>
+  			  </div>
+  			</div>
+  		</div>
+    </script>
+
+		<script type="text/x-handlebars" id="adminPhotos">
+			<h1>Photos</h1>
+      {{#link-to 'adminPhoto' className="btn btn-default"}}Add Photo{{/link-to}}
+		</script>
+  
+    <script type="text/x-handlebars" data-template-name="thumbnailCell">
+      <img width="100" {{bind-attr src="view.cellContent"}}></img>
+    </script>
+    
+    <script type="text/x-handlebars" id="adminPhoto">
+			<h1>Photo</h1>
+      {{#each controller.validFiles}}
+        <div {{bind-attr class="className :file"}}>
+          {{view view.ImagePreview imageBinding="this"}}
+        </div>
+      {{/each}}
+      {{view view.fileField }}
+      
+       <button id="btnSaveNewPic" class="btn btn-default" {{action "savePic" target="view"}}>Save New Photo</button>
+		</script>
+
      
   <script src="js/vendor/jquery-1.10.2.js"></script>
   <script src="js/vendor/jquery.timepicker.js"></script>
@@ -439,19 +456,24 @@
   <script src="js/models/schedule.js"></script>
   <script src="js/models/band.js"></script>
   <script src="js/models/song.js"></script>
+  <script src="js/models/photo.js"></script>
   <script src="js/vendor/bootstrap.js"></script>
   <script src="js/controllers/PlaylistController.js"></script>
   <script src="js/controllers/AdminScheduleController.js"></script>
   <script src="js/controllers/AdminPlaylistController.js"></script>
-  <script src="js/controllers/AdminBandController.js"></script>
-  <script src="js/views/adminScheduleView.js"></script>
-  <script src="js/views/adminPlaylistView.js"></script>
+  <script src="js/controllers/AdminBandController.js"></script>
+  <script src="js/controllers/AdminPhotosController.js"></script>
+  <script src="js/controllers/AdminPhotoController.js"></script>
+  <script src="js/views/AdminScheduleView.js"></script>
+  <script src="js/views/AdminPlaylistView.js"></script>
   <script src="js/views/AdminBandView.js"></script>
+  <script src="js/views/AdminPhotosView.js"></script>
+  <script src="js/views/AdminPhotoView.js"></script>
   <script src="js/views/EditableTableCell.js"></script>
   <script src="js/views/DatePickerTableCell.js"></script>
   <script src="js/views/TimePickerTableCell.js"></script>
   <script src="js/views/RemoveActionTableCell.js"></script>
   <script src="js/views/SongsCell.js"></script>
-
+  <script src="js/views/ThumbnailCell.js"></script>
 </body>
 </html>

@@ -119,3 +119,31 @@ h1{
   float: left;
   left: 20%;
 }
+
+div.droppable div.file {
+    width: 50%;
+    height: auto;
+    background-color: white;
+    position: relative;
+    margin: 0 20px 0 0;
+    z-index: 20001;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .15);
+    transition: all .45s;
+    -o-transition: all .45s;
+    -moz-transition: all .45s;
+    -webkit-transition: all .45s;
+    max-width: 500px;
+}
+
+div.droppable div.file img {
+    width: 100%;
+    height: auto;
+}
+
+div.droppable input{
+  margin-top: 10px;
+}
+
+#btnSaveNewPic{
+  margin-top: 20px;
+}

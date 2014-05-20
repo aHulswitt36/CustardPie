@@ -86,6 +86,7 @@ hr {
 	top: 25px;
 	left: 175px;
 	position: absolute;
+  z-index: 1;
 }
 
 #logo a img{

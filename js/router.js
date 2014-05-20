@@ -11,6 +11,7 @@
 		this.resource('adminSchedule', {path: '/schedule'});
 		this.resource('adminPlaylist', {path: '/playlist'});
 		this.resource('adminPhotos', {path:'/photos'});
+    this.resource('adminPhoto', {path: '/photos/photo/add'});
     this.resource('adminBand', {path: '/band/:band_id'});
 	});
 });
@@ -46,5 +47,11 @@ CustardPie.AdminBandRoute = Ember.Route.extend({
   model: function(params){
      var band = this.store.find('band', params.band_id);
      return band;
+  }
+});
+
+CustardPie.AdminPhotosRoute = Ember.Route.extend({
+  model: function(){
+    return this.store.find('photo');
   }
 });
