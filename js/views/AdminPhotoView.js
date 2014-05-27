@@ -43,10 +43,6 @@ CustardPie.AdminPhotoView = Ember.View.extend({
         controller.send('addFile', file);
       }
       return true;
-  },
-  actions:{
-    savePic: function(){
-      
     }
-  } 
+  })
 });

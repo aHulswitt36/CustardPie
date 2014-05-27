@@ -430,12 +430,12 @@
 			<h1>Photo</h1>
       {{#each controller.validFiles}}
         <div {{bind-attr class="className :file"}}>
-          {{view view.ImagePreview imageBinding="this"}}
+          {{view view.ImagePreview imageBinding="this" id="imagePreview" }}
         </div>
       {{/each}}
       {{view view.fileField }}
       
-       <button id="btnSaveNewPic" class="btn btn-default" {{action "savePic" target="view"}}>Save New Photo</button>
+       <button id="btnSaveNewPic" class="btn btn-default" {{action "savePic"}}>Save New Photo</button>
 		</script>
 
      

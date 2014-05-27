@@ -7,6 +7,24 @@ CustardPie.AdminPhotoController = Ember.Controller.extend({
       var files = this.get('files');
       files.clear();
       files.pushObject(file);
+    },
+    savePic: function(){
+      var file = this.get('files')[0];
+      var reader = new FileReader();
+      var src = "",
+          name = "";
+      
+      reader.onload = function(event){
+        src = event.target.result;
+        name = file.name;
+        var pic = this.store.createRecord('photo', {
+          source: src,
+          title: name
+        });
+        pic.save();
+      }.bind(this);
+      
+      reader.readAsDataURL(file);
     }
   },
   validFiles: Ember.computed(function(){
