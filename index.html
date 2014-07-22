@@ -130,36 +130,26 @@
 						<h3>The Band</h3>
 						<div class="memberRow">
 							<div class="member">	
-								<img alt="Member Name" src="img/TestMember.png"/>
-								<h4>Member Name</h4>
-								<h4>Member Instrument</h4>
+								<img alt="Michael Francis" src="img/MichaelFrancis.png"/>
+								<h4>Michael Francis</h4>
+								<h4>Guitar/Vocals</h4>
 							</div>
 							<div class="member">	
-								<img alt="Member Name" src="img/TestMember.png"/>
-								<h4>Member Name</h4>
-								<h4>Member Instrument</h4>
+								<img alt="Pete Felice" src="img/PeteFelice.png"/>
+								<h4>Pete Felice</h4>
+								<h4>Drums/Vocals</h4>
 							</div>
 							<div class="member">	
-								<img alt="Member Name" src="img/TestMember.png"/>
-								<h4>Member Name</h4>
-								<h4>Member Instrument</h4>
+								<img alt="Dave Hutson" src="img/DaveHutson.png"/>
+								<h4>Dave Hutson</h4>
+								<h4>Bass/Vocals</h4>
 							</div>
 						</div>
 						<div class="memberRow">
 							<div class="member">	
-								<img alt="Member Name" src="img/TestMember.png"/>
-								<h4>Member Name</h4>
-								<h4>Member Instrument</h4>
-							</div>
-							<div class="member">	
-								<img alt="Member Name" src="img/TestMember.png"/>
-								<h4>Member Name</h4>
-								<h4>Member Instrument</h4>
-							</div>
-							<div class="member">	
-								<img alt="Member Name" src="img/TestMember.png"/>
-								<h4>Member Name</h4>
-								<h4>Member Instrument</h4>
+								<img alt="Greg Speelman" src="img/GregSpeelman.png"/>
+								<h4>Greg Speelman</h4>
+								<h4>Keyboards</h4>
 							</div>
 						</div>
 					</div>	
@@ -391,10 +381,12 @@
   
   			  </div>
   			</div>
-  		</div>    
+  		</div>
+    
   	</script>
  
-    <script type="text/x-handlebars" data-template-name="songsCell">    
+    <script type="text/x-handlebars" data-template-name="songsCell">
+    
         {{#link-to 'adminBand' view.bandId classNames="btn btn-default bandSongsLink"}}Edit Songs{{/link-to}} 
     </script>
     
@@ -405,7 +397,8 @@
       	  <div class="example-container">
             <button id="btnAddSong" class="btn btn-default" {{action "addSong" target="view"}}>Add Song</button>
             <div id="addSong">
-              {{view Ember.TextField id="addTitle" placeholder="Song Title" valueBinding="newTitle"}}                			
+              {{view Ember.TextField id="addTitle" placeholder="Song Title" valueBinding="newTitle"}}
+                			
               <br/>
               <button id="btnSaveNewSong" class="btn btn-default" {{action "saveSong" target="view"}}>Save New Song</button>
             </div>
@@ -438,7 +431,8 @@
        <button id="btnSaveNewPic" class="btn btn-default" {{action "savePic"}}>Save New Photo</button>
 		</script>
 
-     
+  
+   
   <script src="js/vendor/jquery-1.10.2.js"></script>
   <script src="js/vendor/jquery.timepicker.js"></script>
   <script src="js/vendor/handlebars-1.1.2.js"></script>
@@ -460,8 +454,10 @@
   <script src="js/vendor/bootstrap.js"></script>
   <script src="js/controllers/PlaylistController.js"></script>
   <script src="js/controllers/AdminScheduleController.js"></script>
-  <script src="js/controllers/AdminPlaylistController.js"></script>
-  <script src="js/controllers/AdminBandController.js"></script>
+  <script src="js/controllers/AdminPlaylistController.js"></script>
+
+  <script src="js/controllers/AdminBandController.js"></script>
+
   <script src="js/controllers/AdminPhotosController.js"></script>
   <script src="js/controllers/AdminPhotoController.js"></script>
   <script src="js/views/AdminScheduleView.js"></script>
