@@ -3,9 +3,9 @@ CustardPie.Store = DS.Store.extend({
 	adapter: "CustardPie.ApplicationAdapter"
 });
 
-CustardPie.ApplicationAdapter = DS.LSAdapter.extend();
+//CustardPie.ApplicationAdapter = DS.LSAdapter.extend();
 
-//CustardPie.ApplicationAdapter = DS.FixtureAdapter.extend();
+CustardPie.ApplicationAdapter = DS.FixtureAdapter.extend();
 
 
 CustardPie.ApplicationSerializer = DS.JSONSerializer.reopen({

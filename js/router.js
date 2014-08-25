@@ -1,9 +1,12 @@
-CustardPie.Router.map(function(){
+
+CustardPie.Router.map(function(){
 	this.resource('default', { path: '/' }, function(){
 		this.resource('home', { path: '/'});
 		this.resource('schedule');
 		this.resource('playlist');
-		this.resource('photos');
+		this.resource('photos', {path: "/photos"}, function(){
+			this.route("selectedPhoto", {path: "/:photo_id"})
+		});
 	});
 	
 	this.resource('admin', { path: '/admin' }, function(){
@@ -17,6 +20,7 @@
 });
 
 
+
 CustardPie.ScheduleRoute = Ember.Route.extend({
 	model: function(){
 		return this.store.find('schedule');
@@ -26,6 +30,12 @@ CustardPie.ScheduleRoute = Ember.Route.extend({
 CustardPie.PlaylistRoute = Ember.Route.extend({
 	model: function(){
 		return this.store.find('band');
+	}
+});
+
+CustardPie.PhotosRoute = Ember.Route.extend({
+	model: function(){
+		return this.store.find('photo');
 	}
 });
 

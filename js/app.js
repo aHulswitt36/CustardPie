@@ -8,9 +8,14 @@ Ember.Handlebars.helper('formatScheduleDate', function(date){
 			"April", "May", "June", "July", "August", "September", 
 			"October", "November", "December");
 		var eventDate = moment(date);
-		return eventDate.format("dddd MMMM Do YYYY,");
+		return eventDate.format("ddd M/D/YY");
 	}
 );
+
+Ember.Handlebars.helper('formatEventDate', function(date){
+	var eventDate = moment(date);
+	return eventDate.format("M/D");
+});
 
 CustardPie.PhotoMixin = Ember.Mixin.create({
   mimeTypes: ['image/jpeg', 'image/jpg', 'image/gif', 'image/png', 'text/plain'],

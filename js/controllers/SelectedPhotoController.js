@@ -1,0 +1,1 @@
+CustardPie.PhotosSelectedPhotoController = Ember.ObjectController.extend({});

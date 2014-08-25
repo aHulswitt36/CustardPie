@@ -22,346 +22,356 @@
   <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
-  <script type="text/x-handlebars">
-    		{{outlet}}
-    	</script>
+	<script type="text/x-handlebars">
+		{{outlet}}
+	</script>
 
-    	<script type="text/x-handlebars" id="default">
-    		<link rel="stylesheet" href="css/main.css">
-	    	<div class="navbar nav-default header" role="navigation">
-				<div id="logo" class="navbar-header">
-					{{#link-to 'home'}}<img src="img/logo.png"/>{{/link-to}}
-				</div>
-				<div id="nav">
-				    <ul>
-				      <li>{{#link-to 'home'}}Home{{/link-to}}</li>
-				      <li>{{#link-to 'schedule'}}Schedule{{/link-to}}</li>				      
-				      <li>{{#link-to 'playlist'}}Playlist{{/link-to}}</li>
-				      <li>{{#link-to 'photos'}}Photos{{/link-to}}</li>
-				    </ul>
-				</div>
-				<div id="ticket">
-					{{#link-to 'schedule'}}<img src='img/ticket.png' />{{/link-to}}
-				</div>
-	    	</div> 
-
-	    	<div id="content">
-	    		{{outlet}}  
-	    	</div>
-
-	    	<div id="footer">
-	    		<div class="container"
-					<hr>
-					<h5>&copy; 2014 Custart Pie Rock and Roll Experience All Rights Reserved</h5>			
-				</div>
+	<script type="text/x-handlebars" id="default">
+		<link rel="stylesheet" href="css/main.css">
+    	<div class="navbar nav-default header" role="navigation">
+			<div id="logo" class="navbar-header">
+				{{#link-to 'home'}}<img src="img/logo.png"/>{{/link-to}}
 			</div>
-    	</script>
-
-    	<script type="text/x-handlebars" id="home">
-    		<div id="home" >
-				<span id="bandPicBg" style="background-color: #ffff"> 
-				<img src='img/band.png' alt="Custard Pie" class='mainPic' />
-				</span>
-				<div style="position: relative;">
-					<div id="upcomingShows" >
-						<h3>Upcoming Shows</h3>
-						<ul>
-							<li>3/27	House of Blues </li>
-							<li>3/27	House of Blues </li>
-							<li>3/27	House of Blues </li>
-						</ul>
-						{{#link-to 'schedule'}}<span class="seeMoreShows">See More Shows</span>{{/link-to}}
-					</div>
-
-					<div id="bandDesc">
-						<h2>We Are</h2><h1>Custard Pie</h1>
-						<p>
-						Hello, and welcome to the Custard Pie Website. It&apos;s been another exciting year for us. I don&apos;t think there is a band out there that looks forward to 
-						playing out as much as we do. Just in the past couple of years, Custard Pie has played over two hundred shows, many of which include: 
-						The House of Blues, Rockin&apos; Resort, Put-n-Bay, and over fifty clubs, meeting people from Streetsboro to Willard, Ohio. In our past, we have opened up 
-						for major acts such as Badfinger, Blackfoot and Foghat, just to name a few. We&apos;ve palyed for Harley Davidson Rolling Thunder four times this year. I 
-						can go on and on about certain clubs we&apos;ve played for and people we&apos;ve met. We love them and appreciate their support. I can tell you as a musician, 
-						the feeling of waiting for just a simple rehearsal is sensational in this band.
-						</p>
-					</div>
-				</div>
-				<div style="position: relative;">
-					<div id="bandPlaylist">
-						<h3>Playlist</h3>
-						<div id="smallPlaylist">
-							<h4>Aerosmith</h4>
-							<ul>
-								<li>Jaded</li>
-								<li>Lord of the Thighs</li>
-								<li>One Way Street</li>
-								<li>Seasons of Whither</li>
-								<li>Sweet Emotion</li>
-							</ul>
-							<h4>America</h4>
-							<ul>
-								<li>Tinman</li>
-								<li>Ventura Highway</li>
-								<li>Argent</li>
-								<li>Hold your head up</li>
-								<li>Artiful Dodger</li>
-								<li>Scream</li>
-							</ul>
-							<h4>Bad Company</h4>
-							<ul>
-								<li>Can&apos;t Get Enough</li>
-								<li>Moving On</li>
-								<li>Rock Steady</li>
-								<li>Silver, Blue and Gold</li>
-							</ul>
-							<h4>Black Sabboth</h4>
-							<ul>
-								<li>Electric Funeral</li>
-								<li>Fairless Wear Boots</li>
-								<li>Ironman</li>
-								<li>N.I.B.</li>
-								<li>Paranoid</li>
-								<li>Sweet Leaf</li>
-								<li>War Pigs</li>
-							</ul>
-						</div>	
-						{{#link-to 'playlist'}}<span id="linkPlaylist">See Whole Playlist</span>{{/link-to}}
-					</div>
-					<div id="bandMembers">
-						<h3>The Band</h3>
-						<div class="memberRow">
-							<div class="member">	
-								<img alt="Michael Francis" src="img/MichaelFrancis.png"/>
-								<h4>Michael Francis</h4>
-								<h4>Guitar/Vocals</h4>
-							</div>
-							<div class="member">	
-								<img alt="Pete Felice" src="img/PeteFelice.png"/>
-								<h4>Pete Felice</h4>
-								<h4>Drums/Vocals</h4>
-							</div>
-							<div class="member">	
-								<img alt="Dave Hutson" src="img/DaveHutson.png"/>
-								<h4>Dave Hutson</h4>
-								<h4>Bass/Vocals</h4>
-							</div>
-						</div>
-						<div class="memberRow">
-							<div class="member">	
-								<img alt="Greg Speelman" src="img/GregSpeelman.png"/>
-								<h4>Greg Speelman</h4>
-								<h4>Keyboards</h4>
-							</div>
-						</div>
-					</div>	
-				</div>	
-				<br/>
-				<br/>	
-			</div>	
-    	</script>
-
-    	<script type="text/x-handlebars" id="schedule">
-    		<div id="schedule">
-				<div id="scheduleDiv">
-					<h1>Schedule</h1>
-					<div class="scheduleHeader">
-						<div class="scheduleDate"><h4>Date/Time</h4></div>
-						<div class="scheduleVenue"><h4>Venue</h4></div>
-						<div class="scheduleLocation"><h4>Location</h4></div>
-					</div>
-					{{#each model}}
-						<div class="scheduleRow">
-							<div class="scheduleRowDate"><h5>{{formatScheduleDate date}} {{time}}</h5></div>
-							<div class="scheduleRowVenue"><h5>{{venue}}</h5></div>
-							<div class="scheduleRowLocation"><h5>{{location}}</h5></div>
-						</div>
-					{{/each}}
-				</div>
+			<div id="nav">
+			    <ul>
+			      <li>{{#link-to 'home'}}Home{{/link-to}}</li>
+			      <li>{{#link-to 'schedule'}}Schedule{{/link-to}}</li>				      
+			      <li>{{#link-to 'playlist'}}Playlist{{/link-to}}</li>
+			      <li>{{#link-to 'photos'}}Photos{{/link-to}}</li>
+			    </ul>
 			</div>
-    	</script>
+			<div id="ticket">
+				{{#link-to 'schedule'}}<img src='img/ticket.png' />{{/link-to}}
+			</div>
+    	</div> 
 
-		<script type="text/x-handlebars" id="playlist">
-			<div id="playlist">
-				<div id="playlistDiv">
-					<h1>Playlist</h1>
-					<ul id="playlistFilter">
-						<li><a href="A">A</a></li>
-						<li><a href="A">B</a></li>
-						<li><a href="A">C</a></li>
-						<li><a href="A">D</a></li>
-						<li><a href="A">E</a></li>
-						<li><a href="A">F</a></li>
-						<li><a href="A">G</a></li>
-						<li><a href="A">H</a></li>
-						<li><a href="A">I</a></li>
-						<li><a href="A">J</a></li>
-						<li><a href="A">K</a></li>
-						<li><a href="A">L</a></li>
-						<li><a href="A">M</a></li>
-						<li><a href="A">N</a></li>
-						<li><a href="A">O</a></li>
-						<li><a href="A">P</a></li>
-						<li><a href="A">Q</a></li>
-						<li><a href="A">R</a></li>
-						<li><a href="A">S</a></li>
-						<li><a href="A">T</a></li>
-						<li><a href="A">U</a></li>
-						<li><a href="A">V</a></li>
-						<li><a href="A">W</a></li>
-						<li><a href="A">X</a></li>
-						<li><a href="A">Y</a></li>
-						<li><a href="A">Z</a></li>
+    	<div id="content">
+    		{{outlet}}  
+    	</div>
+
+    	<div id="footer">
+    		<div class="container"
+				<hr>
+				<h5>&copy; 2014 Custart Pie Rock and Roll Experience All Rights Reserved</h5>			
+			</div>
+		</div>
+	</script>
+
+	<script type="text/x-handlebars" id="home">
+		<div id="home" >
+			<span id="bandPicBg" style="background-color: #ffff"> 
+			<img src='img/band.png' alt="Custard Pie" class='mainPic' />
+			</span>
+			<div style="position: relative;">
+				<div id="upcomingShows" >
+					<h3>Upcoming Shows</h3>
+					<ul>
+						<!--{{#each model}}
+						<li>{{formatEventDate date}} {{venue}}</li>
+						{{/each}}-->
+						<li>8/23 Quaker State &amp; Lube</li>
+						<li>9/6 Manzo&apos;s Sports &amp; Spirits</li>
+						<li>9/13 Willowick Restaurant &amp; Lounge</li>
 					</ul>
-					{{#each groupedByBandName}}
-						<div {{bind-attr id="group"}} class="songlist">
-							{{#each content}}
-								<div class="band">
-									<h2>{{name}}</h2>
-									<ul>
-										{{#each songs}}
-											<li>{{title}}</li>
-										{{/each}}
-									</ul>
-								</div>
-							{{/each}}
-						</div>
-					{{/each}}
+					{{#link-to 'schedule'}}<span class="seeMoreShows">See More Shows</span>{{/link-to}}
+				</div>
+
+				<div id="bandDesc">
+					<h2>We Are</h2><h1>Custard Pie</h1>
+					<p>
+					Hello, and welcome to the Custard Pie Website. It&apos;s been another exciting year for us. I don&apos;t think there is a band out there that looks forward to 
+					playing out as much as we do. Just in the past couple of years, Custard Pie has played over two hundred shows, many of which include: 
+					The House of Blues, Rockin&apos; Resort, Put-n-Bay, and over fifty clubs, meeting people from Streetsboro to Willard, Ohio. In our past, we have opened up 
+					for major acts such as Badfinger, Blackfoot and Foghat, just to name a few. We&apos;ve palyed for Harley Davidson Rolling Thunder four times this year. I 
+					can go on and on about certain clubs we&apos;ve played for and people we&apos;ve met. We love them and appreciate their support. I can tell you as a musician, 
+					the feeling of waiting for just a simple rehearsal is sensational in this band.
+					</p>
 				</div>
 			</div>
-		</script>
+			<div style="position: relative;">
+				<div id="bandPlaylist">
+					<h3>Playlist</h3>
+					<div id="smallPlaylist">
+						<h4>Aerosmith</h4>
+						<ul>
+							<li>Jaded</li>
+							<li>Lord of the Thighs</li>
+							<li>One Way Street</li>
+							<li>Seasons of Whither</li>
+							<li>Sweet Emotion</li>
+						</ul>
+						<h4>America</h4>
+						<ul>
+							<li>Tinman</li>
+							<li>Ventura Highway</li>
+							<li>Argent</li>
+							<li>Hold your head up</li>
+							<li>Artiful Dodger</li>
+							<li>Scream</li>
+						</ul>
+						<h4>Bad Company</h4>
+						<ul>
+							<li>Can&apos;t Get Enough</li>
+							<li>Moving On</li>
+							<li>Rock Steady</li>
+							<li>Silver, Blue and Gold</li>
+						</ul>
+						<h4>Black Sabboth</h4>
+						<ul>
+							<li>Electric Funeral</li>
+							<li>Fairless Wear Boots</li>
+							<li>Ironman</li>
+							<li>N.I.B.</li>
+							<li>Paranoid</li>
+							<li>Sweet Leaf</li>
+							<li>War Pigs</li>
+						</ul>
+					</div>	
+					{{#link-to 'playlist'}}<span id="linkPlaylist">See Whole Playlist</span>{{/link-to}}
+				</div>
+				<div id="bandMembers">
+					<h3>The Band</h3>
+					<div class="memberRow">
+						<div class="member">	
+							<img alt="Michael Francis" src="img/MichaelFrancis.png"/>
+							<h4>Michael Francis</h4>
+							<h4>Guitar/Vocals</h4>
+						</div>
+						<div class="member">	
+							<img alt="Pete Felice" src="img/PeteFelice.png"/>
+							<h4>Pete Felice</h4>
+							<h4>Drums/Vocals</h4>
+						</div>
+						<div class="member">	
+							<img alt="Dave Hutson" src="img/DaveHutson.png"/>
+							<h4>Dave Hutson</h4>
+							<h4>Bass/Vocals</h4>
+						</div>
+					</div>
+					<div class="memberRow">
+						<div class="member">	
+							<img alt="Greg Speelman" src="img/GregSpeelman.png"/>
+							<h4>Greg Speelman</h4>
+							<h4>Keyboards</h4>
+						</div>
+					</div>
+				</div>	
+			</div>	
+			<br/>
+			<br/>	
+		</div>	
+	</script>
 
-		<script type="text/x-handlebars" id="photos">
-			<div id="photos">
-				<div id="photoDiv">
-					<h1>Photos</h1>
-					<span id="spnLargePhoto" style="background-color: #ffff"> 
-						<img src='img/band.png' alt="Custard Pie" class='largePic' />
-					</span>
-					<div id="divSmallPhotos">
-						<div class="divSmallImg">
-							<img src='img/band.png' alt="Custard Pie" class="smallImg" />
-						</div>
-						<div class="divSmallImg">
-							<img src='img/band.png' alt="Custard Pie" class="smallImg" />
-						</div>
-						<div class="divSmallImg">
-							<img src='img/band.png' alt="Custard Pie" class="smallImg" />
-						</div>
-						<div class="divSmallImg">
-							<img src='img/band.png' alt="Custard Pie" class="smallImg" />
-						</div>
-						<div class="divSmallImg">
-							<img src='img/band.png' alt="Custard Pie" class="smallImg" />
-						</div>
-						<div class="divSmallImg">
-							<img src='img/band.png' alt="Custard Pie" class="smallImg" />
-						</div>
+	<script type="text/x-handlebars" id="schedule">
+		<div id="schedule">
+			<div id="scheduleDiv">
+				<h1>Schedule</h1>
+				<div class="scheduleHeader">
+					<div class="scheduleDate"><h4>Date</h4></div>
+					<div class="scheduleTime"><h4>Time</h4></div>
+					<div class="scheduleVenue"><h4>Venue</h4></div>
+					<div class="scheduleLocation"><h4>Location</h4></div>
+				</div>
+				{{#each model}}
+					<div class="scheduleRow">
+						<div class="scheduleRowDate"><h5>{{formatScheduleDate date}}</h5></div>
+						<div class="scheduleRowTime"><h5>{{time}}</h5></div>
+						<div class="scheduleRowVenue"><h5>{{venue}}</h5></div>
+						<div class="scheduleRowLocation"><h5>{{location}}</h5></div>
+					</div>
+				{{/each}}
+			</div>
+		</div>
+	</script>
+
+	<script type="text/x-handlebars" id="playlist">
+		<div id="playlist">
+			<div id="playlistDiv">
+				<h1>Playlist</h1>
+				<ul id="playlistFilter">
+					<li><a class="filter" href="#A">A</a></li>
+					<li><a class="filter" href="#B">B</a></li>
+					<li><a class="filter" href="#C">C</a></li>
+					<li><a class="filter" href="#D">D</a></li>
+					<li><a class="filter" href="#E">E</a></li>
+					<li><a class="filter" href="#F">F</a></li>
+					<li><a class="filter" href="#G">G</a></li>
+					<li><a class="filter" href="#H">H</a></li>
+					<li><a class="filter" href="#I">I</a></li>
+					<li><a class="filter" href="#J">J</a></li>
+					<li><a class="filter" href="#K">K</a></li>
+					<li><a class="filter" href="#L">L</a></li>
+					<li><a class="filter" href="#M">M</a></li>
+					<li><a class="filter" href="#N">N</a></li>
+					<li><a class="filter" href="#O">O</a></li>
+					<li><a class="filter" href="#P">P</a></li>
+					<li><a class="filter" href="#Q">Q</a></li>
+					<li><a class="filter" href="#R">R</a></li>
+					<li><a class="filter" href="#S">S</a></li>
+					<li><a class="filter" href="#T">T</a></li>
+					<li><a class="filter" href="#U">U</a></li>
+					<li><a class="filter" href="#V">V</a></li>
+					<li><a class="filter" href="#W">W</a></li>
+					<li><a class="filter" href="#X">X</a></li>
+					<li><a class="filter" href="#Y">Y</a></li>
+					<li><a class="filter" href="#Z">Z</a></li>
+				</ul>
+				{{#each groupedByBandName}}
+					<div {{bind-attr id="group"}} class="songlist">
+						{{#each content}}
+							<div class="band">
+								<h2>{{name}}</h2>
+								<ul>
+									{{#each songs}}
+										<li>{{title}}</li>
+									{{/each}}
+								</ul>
+							</div>
+						{{/each}}
+					</div>
+				{{/each}}
+			</div>
+		</div>
+	</script>
+
+	<script type="text/x-handlebars" id="photos">
+		<div id="photos">
+			<div id="photoDiv">
+				<h1>Photos</h1>
+
+				{{outlet}}
+				
+				<div id="divSmallPhotos">
+		            {{#each photo in controller}}
+			            <div class="divSmallImg">
+			                {{#link-to 'photos.selectedPhoto' photo}}
+			                    {{view CustardPie.PhotoThumbnailView
+			                        srcBinding="photo.source"
+			                        contentBinding="photo"}}
+		                    {{/link-to}}
+			            </div>
+		            {{/each}}
+		        </div>
+			</div>
+		</div>
+	</script>
+
+	<script type="text/x-handlebars" id="photos/selectedPhoto">
+        <div id="selectedPhoto">
+	        <!--<div id="previousPhoto">
+
+			</div>-->
+            <div class="selectedPhotoItem">
+                <img id="selectedImage" {{bindAttr src="source"}}/>
+            </div>
+            <!--<div id="nextPhoto">
+
+        	</div>-->
+        </div>        
+    </script>
+
+	<script type="text/x-handlebars" id="admin">
+		<link rel="stylesheet" href="css/admin.css">
+		<div class="navbar navbar-default" role="navigation">
+		  	<div class="navbar-inner">
+		  		<span class="adminLogo">Custard Pie</span>
+		  		<span class="adminLogoStandard">Administration</span>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span3">
+					<!--<div class="well">-->
+						<ul class="nav nav-list">
+							<li class="nav-header">Dashboard</li>
+							<li>{{#link-to 'adminHome'}}Home{{/link-to}}</li>
+							<li>{{#link-to 'adminSchedule'}}Schedule{{/link-to}}</li>
+							<li>{{#link-to 'adminPlaylist'}}Playlist{{/link-to}}</li>
+							<li>{{#link-to 'adminPhotos'}}Photos{{/link-to}}</li>
+						</ul>
+					<!--</div>-->
+				</div>
+				<div class="span9">
+					{{outlet}}
+				</div>
+			</div>
+		</div>
+
+		<!--<div id="footer">
+			<div class="container">
+				<p class="text-muted">footer</p>
+			</div>
+		</div>-->			
+	</script>
+
+	<script type="text/x-handlebars" id="adminHome">
+		<h1>Home</h1>
+		<h2>Message to the Fans</h2>
+		{{textarea cols="80" rows="6"}}
+
+		<h2>Main Photo</h2>
+		<input type='file'/>
+	</script>
+
+	<script type="text/x-handlebars" id="adminSchedule">
+		<h1>Schedule</h1>
+		<div class="row">
+          	<div class="col-md-12">
+            	<div class="example-container">
+            		<button id="btnAddEvent" class="btn btn-default" {{action "addEvent" target="view"}}>Add Event</button>
+            		<div id="addEvent">
+            			{{view Ember.TextField id="addDate" placeholder="Event Date" valueBinding="newDate"}}
+            			{{view Ember.TextField id="addTime" placeholder="Event Time" valueBinding="newTime"}}
+            			{{view Ember.TextField id="addVenue" placeholder="Event Venue" valueBinding="newVenue"}}
+            			{{view Ember.TextField id="addAddress" placeholder="Event Address" valueBinding="newAddress"}}
+            			
+            			<br/>
+            			<button id="btnSaveNewEvent" class="btn btn-default" {{action "saveEvent" target="view"}}>Save New Event</button>
+            		</div>
+              		<div class="ember-table-example-container" style="height:500px; ">
+						{{table-component hasHeader=true hasFooter=false numFixedColumns=0 rowHeight=35 columnsBinding="columns" contentBinding="sortedContent"}}
 					</div>
 				</div>
 			</div>
-		</script>
+		</div>
+	</script>
 
-		<script type="text/x-handlebars" id="admin">
-    		<link rel="stylesheet" href="css/admin.css">
-			<div class="navbar navbar-default" role="navigation">
-			  	<div class="navbar-inner">
-			  		<span class="adminLogo">Custard Pie</span>
-			  		<span class="adminLogoStandard">Administration</span>
-				</div>
-			</div>
+	<script type="text/x-handlebars" data-template-name="editableScheduleCell">
+		<span class="ember-table-content">
+		  {{#if view.isEditing}}
+		    {{view view.innerTextField}}
+		  {{else}}
+		    <span class='content'>{{view.cellContent}}</span>
+		  {{/if}}
+		</span>
+	</script>
 
-			<div class="container-fluid">
-				<div class="row-fluid">
-					<div class="span3">
-						<!--<div class="well">-->
-							<ul class="nav nav-list">
-								<li class="nav-header">Dashboard</li>
-								<li>{{#link-to 'adminHome'}}Home{{/link-to}}</li>
-								<li>{{#link-to 'adminSchedule'}}Schedule{{/link-to}}</li>
-								<li>{{#link-to 'adminPlaylist'}}Playlist{{/link-to}}</li>
-								<li>{{#link-to 'adminPhotos'}}Photos{{/link-to}}</li>
-							</ul>
-						<!--</div>-->
-					</div>
-					<div class="span9">
-						{{outlet}}
-					</div>
-				</div>
-			</div>
+	<script type="text/x-handlebars" data-template-name="editableTimeCell">
+		<span class="ember-table-content">
+		  {{#if view.isEditing}}
+		    {{view view.innerTextField}}
+		  {{else}}
+		    <span class='content'>{{view.cellContent}}</span>
+		  {{/if}}
+		</span>
+	</script>
 
-			<!--<div id="footer">
-				<div class="container">
-					<p class="text-muted">footer</p>
-				</div>
-			</div>-->			
-		</script>
+	<script type="text/x-handlebars" data-template-name="editableDateCell">
+		<span class="ember-table-content">
+		  {{#if view.isEditing}}
+		    {{view view.innerTextField}}
+		  {{else}}
+		    <span class='content'>{{view.cellContent}}</span>
+		  {{/if}}
+		</span>
+	</script>
 
-		<script type="text/x-handlebars" id="adminHome">
-			<h1>Home</h1>
-			<h2>Message to the Fans</h2>
-			{{textarea cols="80" rows="6"}}
-
-			<h2>Main Photo</h2>
-			<input type='file'/>
-		</script>
-
-		<script type="text/x-handlebars" id="adminSchedule">
-			<h1>Schedule</h1>
-			<div class="row">
-              	<div class="col-md-12">
-                	<div class="example-container">
-                		<button id="btnAddEvent" class="btn btn-default" {{action "addEvent" target="view"}}>Add Event</button>
-                		<div id="addEvent">
-                			{{view Ember.TextField id="addDate" placeholder="Event Date" valueBinding="newDate"}}
-                			{{view Ember.TextField id="addTime" placeholder="Event Time" valueBinding="newTime"}}
-                			{{view Ember.TextField id="addVenue" placeholder="Event Venue" valueBinding="newVenue"}}
-                			{{view Ember.TextField id="addAddress" placeholder="Event Address" valueBinding="newAddress"}}
-                			
-                			<br/>
-                			<button id="btnSaveNewEvent" class="btn btn-default" {{action "saveEvent" target="view"}}>Save New Event</button>
-                		</div>
-                  		<div class="ember-table-example-container" style="height:500px; ">
-							{{table-component hasHeader=true hasFooter=false numFixedColumns=0 rowHeight=35 columnsBinding="columns" contentBinding="sortedContent"}}
-						</div>
-					</div>
-				</div>
-			</div>
-		</script>
-
-		<script type="text/x-handlebars" data-template-name="editableScheduleCell">
-			<span class="ember-table-content">
-			  {{#if view.isEditing}}
-			    {{view view.innerTextField}}
-			  {{else}}
-			    <span class='content'>{{view.cellContent}}</span>
-			  {{/if}}
-			</span>
-		</script>
-
-		<script type="text/x-handlebars" data-template-name="editableTimeCell">
-			<span class="ember-table-content">
-			  {{#if view.isEditing}}
-			    {{view view.innerTextField}}
-			  {{else}}
-			    <span class='content'>{{view.cellContent}}</span>
-			  {{/if}}
-			</span>
-		</script>
-
-		<script type="text/x-handlebars" data-template-name="editableDateCell">
-			<span class="ember-table-content">
-			  {{#if view.isEditing}}
-			    {{view view.innerTextField}}
-			  {{else}}
-			    <span class='content'>{{view.cellContent}}</span>
-			  {{/if}}
-			</span>
-		</script>
-
-		<script type="text/x-handlebars" data-template-name="removeCell">
-			<span class="btn btn-default removeBtn" {{action "removeEvent" target="view"}}>
-				<span class="glyphicon glyphicon-remove"></span>
-			</span>
-		</script>
+	<script type="text/x-handlebars" data-template-name="removeCell">
+		<span class="btn btn-default removeBtn" {{action "removeEvent" target="view"}}>
+			<span class="glyphicon glyphicon-remove"></span>
+		</span>
+	</script>
   
     <script type="text/x-handlebars" id="adminPlaylist">
   	  <h1>Playlist</h1>
@@ -410,66 +420,77 @@
   		</div>
     </script>
 
-		<script type="text/x-handlebars" id="adminPhotos">
-			<h1>Photos</h1>
-      {{#link-to 'adminPhoto' className="btn btn-default"}}Add Photo{{/link-to}}
-		</script>
+	<script type="text/x-handlebars" id="adminPhotos">
+		<h1>Photos</h1>
+		{{#link-to 'adminPhoto' className="btn btn-default"}}Add Photo{{/link-to}}
+	</script>
   
     <script type="text/x-handlebars" data-template-name="thumbnailCell">
-      <img width="100" {{bind-attr src="view.cellContent"}}></img>
+		<img width="100" {{bind-attr src="view.cellContent"}}></img>
     </script>
     
     <script type="text/x-handlebars" id="adminPhoto">
-			<h1>Photo</h1>
-      {{#each controller.validFiles}}
-        <div {{bind-attr class="className :file"}}>
-          {{view view.ImagePreview imageBinding="this" id="imagePreview" }}
-        </div>
-      {{/each}}
-      {{view view.fileField }}
-      
-       <button id="btnSaveNewPic" class="btn btn-default" {{action "savePic"}}>Save New Photo</button>
-		</script>
+		<h1>Photo</h1>
+		{{#each controller.validFiles}}
+			<div {{bind-attr class="className :file"}}>
+		  		{{view view.ImagePreview imageBinding="this" id="imagePreview" }}
+			</div>
+		{{/each}}
+		{{view view.fileField }}
 
-  
+		<button id="btnSaveNewPic" class="btn btn-default" {{action "savePic"}}>Save New Photo</button>
+	</script>
    
-  <script src="js/vendor/jquery-1.10.2.js"></script>
-  <script src="js/vendor/jquery.timepicker.js"></script>
-  <script src="js/vendor/handlebars-1.1.2.js"></script>
+	<script src="js/vendor/jquery-1.10.2.js"></script>
+	<script src="js/vendor/jquery.timepicker.js"></script>
+	<script src="js/vendor/handlebars-1.1.2.js"></script>
 	<script src="js/vendor/ember-1.3.0.js"></script>
 	<script src="js/vendor/ember-data.js"></script>
 	<script src="js/vendor/localstorage_adapter.js"></script>
 	<script src="js/vendor/ember-table.js"></script>
 	<script src="js/vendor/antiscroll.js"></script>
 	<script src="js/vendor/jquery-ui-1.10.4.custom.js"></script>
-  <script src="js/vendor/jquery.mousewheel.js"></script>
-  <script src="js/vendor/moment.min.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/router.js"></script>
-  <script src="js/models/store.js"></script>
-  <script src="js/models/schedule.js"></script>
-  <script src="js/models/band.js"></script>
-  <script src="js/models/song.js"></script>
-  <script src="js/models/photo.js"></script>
-  <script src="js/vendor/bootstrap.js"></script>
-  <script src="js/controllers/PlaylistController.js"></script>
-  <script src="js/controllers/AdminScheduleController.js"></script>
-  <script src="js/controllers/AdminPlaylistController.js"></script>
+	<script src="js/vendor/jquery.mousewheel.js"></script>
+	<script src="js/vendor/moment.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/router.js"></script>
+	<script src="js/models/store.js"></script>
+	<script src="js/models/schedule.js"></script>
+	<script src="js/models/band.js"></script>
+	<script src="js/models/song.js"></script>
+	<script src="js/models/photo.js"></script>
+	<script src="js/vendor/bootstrap.js"></script>
+	<script src="js/controllers/PlaylistController.js"></script>
+	<script src="js/controllers/AdminScheduleController.js"></script>
+	<script src="js/controllers/AdminPlaylistController.js"></script>
+	<script src="js/controllers/AdminBandController.js"></script>
+	<script src="js/controllers/AdminPhotosController.js"></script>
+	<script src="js/controllers/AdminPhotoController.js"></script>
+	<script src="js/controllers/PhotosController.js"></script>
+	<script src="js/controllers/SelectedPhotoController.js"></script>
+	<script src="js/views/PhotoThumbnailView.js"></script>
+	<script src="js/views/AdminScheduleView.js"></script>
+	<script src="js/views/AdminPlaylistView.js"></script>
+	<script src="js/views/AdminBandView.js"></script>
+	<script src="js/views/AdminPhotosView.js"></script>
+	<script src="js/views/AdminPhotoView.js"></script>
+	<script src="js/views/EditableTableCell.js"></script>
+	<script src="js/views/DatePickerTableCell.js"></script>
+	<script src="js/views/TimePickerTableCell.js"></script>
+	<script src="js/views/RemoveActionTableCell.js"></script>
+	<script src="js/views/SongsCell.js"></script>
+	<script src="js/views/ThumbnailCell.js"></script>
 
-  <script src="js/controllers/AdminBandController.js"></script>
-
-  <script src="js/controllers/AdminPhotosController.js"></script>
-  <script src="js/controllers/AdminPhotoController.js"></script>
-  <script src="js/views/AdminScheduleView.js"></script>
-  <script src="js/views/AdminPlaylistView.js"></script>
-  <script src="js/views/AdminBandView.js"></script>
-  <script src="js/views/AdminPhotosView.js"></script>
-  <script src="js/views/AdminPhotoView.js"></script>
-  <script src="js/views/EditableTableCell.js"></script>
-  <script src="js/views/DatePickerTableCell.js"></script>
-  <script src="js/views/TimePickerTableCell.js"></script>
-  <script src="js/views/RemoveActionTableCell.js"></script>
-  <script src="js/views/SongsCell.js"></script>
-  <script src="js/views/ThumbnailCell.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.filter').on('click', function(e){
+				e.preventDefault();
+				var target = "#" + $(this).attr('href');
+				$('html, body').animate({
+			        scrollTop: $(target).offset().top
+			    }, 2000);
+			})
+		});
+	</script>  
 </body>
 </html>

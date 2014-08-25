@@ -78,6 +78,35 @@ hr {
 	width: 91%;
 	background-size: 120px;
 	position: relative;
+	z-index: 100;
+}
+
+#divSmallPhotos{
+	position: relative;
+	top: 50%;
+	left: 5%;
+}
+
+.thumbnailItem {
+    width: 75px;
+    height: 75px;
+    float: left;
+    margin-right: 10px;
+    cursor:pointer;
+}
+
+.thumbnailItem.is-selected {
+    border: 2px solid #000;
+    width: 100px;
+    height: 100px;
+}
+
+.thumbnailViewList {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    height: 100px;
 }
 
 #logo {
@@ -156,17 +185,14 @@ hr {
 .mainPic{
 	height: 420px;
 	width: 56.5%;
-	margin-left: -135px;
-	margin-top: 40px;
+	margin-left: 20%;
+	margin-top: 35px;
 	border: 12px solid;
 	border-color: #242323;
 }
 #bandPicBg {
 	z-index: 1;
 	position: relative;
-	height: 500px;
-	width: 400px;
-	margin-left: 415px;
 }
 #home h2{
 	font-family: 'Tinet';
@@ -212,7 +238,7 @@ h5{
 
 #home #bandDesc{
 	color: white;
-	font-size: 10px;
+	font-size: 14px;
 	margin-left: 21%;
 	margin-right: 41%;
 }
@@ -248,7 +274,7 @@ h5{
 #home #upcomingShows ul{
 	color: white;
 	list-style-type: none;
-	font-size: 17px;
+	font-size: 15px;
 }
 #home #upcomingShows ul li {
 	padding-bottom: 10px;
@@ -292,9 +318,9 @@ h5{
 	position: absolute;
 	background-size: 100%;
 	width: 250px;
-	height: 600px;
+	height: 80%;
 	z-index: 0;
-	top: -74px;
+	top: -170px;
 	left: 63%;
 	font-family: 'Tinet';
 }
@@ -334,16 +360,14 @@ h5{
 #schedule, #playlist, #photos{
 	position: relative;
 	top: 15px;
-	z-index: -2;
-	width: 100%;
 }
 
 #scheduleDiv, #playlistDiv, #photoDiv{
 	background: url(../img/int-background.png) no-repeat;
 	background-size: 100%;
-	width: 800px;
+	width: 60%;
 	min-height: 600px;
-	margin-left: 20%;
+	margin-left: 18%;
 	padding-top: 85px;
 }
 
@@ -360,16 +384,21 @@ h5{
 	font-family: "Tinet";
 	color: white;
 	margin-left: 0px !important;
-	font-size: 16px;
+	font-size: 17px;
 }
 .scheduleDate{
 	margin-left: 25px;
 	display: inline-block;
-	margin-right: 115px;
+	width: 14%;
+	margin-right: 5%;
+}
+.scheduleTime{
+	display: inline-block;
+	width: 11%;
 }
 .scheduleVenue{
 	display: inline-block;
-	margin-right: 230px;
+	width: 31%;
 }
 .scheduleLocation{
 	display: inline-block;
@@ -377,20 +406,22 @@ h5{
 .scheduleRowDate{
 	margin-left: 25px;
 	display: inline-block;
-	margin-right: 45px;
-	width: 200px;
+	margin-right: 5%;
+	width: 14%;
 	word-wrap: break-word;
+}
+.scheduleRowTime{
+	display: inline-block;
+	width: 11%;
 }
 .scheduleRowVenue{
 	display: inline-block;
-	margin-right: 230px;
-	margin-right: 0px;
-	width: 300px;
+	width: 31%;
 }
 .scheduleRowLocation{
 	display: inline-block;
 	word-wrap: break-word;
-	width: 200px;
+	width: 25%;
 }
 
 #playlistFilter{
@@ -439,14 +470,51 @@ h5{
 	border: 12px solid;
 	border-color: #242323;
 }
+
 .divSmallImg{
 	position: relative;
 	top: 30px;
 	left: 35px;
 	display: inline-block;
 	padding: 0 24px 24px 0;
+	width: 28%;
 }
-.smallImg{
-	height: 130px;
+
+.divSmallImg img{
+	width: 100%;
 	border: 2px solid;
+}
+
+img.thumbnailItem {
+    cursor:pointer;
+}
+
+#selectedPhoto{
+	
+}
+
+.selectedPhotoItem{
+	display: inline-block;
+	margin-left: 15%;
+}
+
+.selectedPhotoItem img {
+    border-radius: 25px;
+    -moz-bottomleft: 25px;
+    width: 90%;
+}
+
+#previousPhoto, #nextPhoto{
+	background-color: black;
+	height: 430px;
+	width: 15%; 
+	display: inline-block;
+}
+
+#previousPhoto{
+	float: left;
+}
+
+#nextPhoto{
+	float: right;
 }
