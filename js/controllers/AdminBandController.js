@@ -18,7 +18,7 @@ CustardPie.AdminBandController = Ember.ObjectController.extend({
 	    name = key.charAt(0).toUpperCase() + key.slice(1);
 	    return Ember.Table.ColumnDefinition.create({
 	      columnWidth: 407,
-	      headerCellName: name,
+	      headerCellName: bandName,
 	      tableCellViewClass: 'CustardPie.EditableTableCell',
 	      contentPath: 'title',
 	      setCellContent: function(row, value) {
@@ -35,18 +35,18 @@ CustardPie.AdminBandController = Ember.ObjectController.extend({
     saveNewSong: function(model){
       var title = model.title;
       var band = this.get('content');
-      
+
       var newSong = this.get('store').createRecord('song', {
         title: title,
         band: band
-      });      
-      
+      });
+
       newSong.save().then(function(song){
         var songBand = song.get('band');
         songBand.get('songs').pushObject(newSong);
         songBand.save();
       });
-            
+
       this.set('newTitle', '');
     }
   }

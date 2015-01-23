@@ -3,8 +3,23 @@ var app     = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
+var allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept, Authorization, Content-Length, X-Requested-With');
+
+    // intercept OPTIONS method
+    if ('OPTIONS' == req.method) {
+      res.sendStatus(200);
+    }
+    else {
+      next();
+    }
+};
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.use(allowCrossDomain);
 
 var port = process.env.port || 8080;
 
@@ -24,7 +39,7 @@ router.get('/', function(req, res){
   res.json({ message : 'hooray! welcome'});
 });
 
-router.route('/schedule')
+router.route('/schedules')
   .post(function(req, res){
     var schedule = new Schedule();
     schedule.date = req.body.date;
@@ -45,11 +60,11 @@ router.route('/schedule')
       if(err)
         res.send(err);
 
-      res.json(schedules);
+      res.json({schedules: schedules});
     });
   });
 
-router.route('/schedule/:schedule_id')
+router.route('/schedules/:schedule_id')
   .get(function(req, res){
     Schedule.findById(req.params.schedule_id, function(err,schedule){
       if(err)
@@ -87,14 +102,14 @@ router.route('/schedule/:schedule_id')
     });
   });
 
-router.route('/band')
+router.route('/bands')
   .get(function(req, res){
     Band.find(function(err, bands){
       if(err)
         res.send(err);
 
       console.log(bands.length + " hey");
-      res.json(bands);
+      res.json({bands: bands});
     });
   })
   .post(function(req, res){
@@ -123,7 +138,7 @@ router.route('/band')
     });
   })
 
-router.route('/band/:band_id')
+router.route('/bands/:band_id')
   .get(function(req, res){
     Band.findById(req.params.band_id, function(err, band){
       if(err)
@@ -172,27 +187,17 @@ router.route('/band/:band_id')
   });
 
 //get all songs for a band
-router.route('/song/:band_id')
+router.route('/songs/:band_id')
   .get(function(req, res){
     Song.find({_band: req.params.band_id}, function(err, songs){
       if(err)
         res.send(err);
-        
-      res.json(songs);
+
+      res.json({songs:songs});
     });
   });
 
-router.route('/singleSong/:song_id')
-  .get(function(req, res){
-    Song.findById(req.params.song_id, function(err, song){
-      if(err)
-        res.send(err);
-
-      res.json(song);
-    });
-  })
-
-router.route('/song/:song_id')
+router.route('/songs/:song_id')
   .put(function(req, res){
     Song.findById(req.params.song_id, function(err, song){
       if(err)

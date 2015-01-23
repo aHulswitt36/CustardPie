@@ -1,6 +1,6 @@
 CustardPie.AdminPlaylistController = Ember.ArrayController.extend({
   content: [],
-  sortProperties: ['name'],
+  sortProperties: ['bandName'],
 	sortAscending: true ,
   columns: Ember.computed(function() {
 		var columnNames, columns, removeColumn, songsColumn;
@@ -31,11 +31,11 @@ CustardPie.AdminPlaylistController = Ember.ArrayController.extend({
 	      columnWidth: $(window).width() / 4,
 	      headerCellName: name,
 	      tableCellViewClass: 'CustardPie.EditableTableCell',
-	      contentPath: 'name',
+	      contentPath: 'bandName',
 	      setCellContent: function(row, value) {
-	      	row.set('name', value);
+	      	row.set('bandName', value);
 	      	row.save();
-	        return row.set('name',value);
+	        return row.set('bandName',value);
 	      }
 	    });
 	  });
@@ -46,14 +46,13 @@ CustardPie.AdminPlaylistController = Ember.ArrayController.extend({
    actions: {
     saveNewBand: function(model){
       var name = model.name;
-      
+
       var newBand = this.store.createRecord('band', {
-        name: name
+        bandName: name
       });
-      
+
       newBand.save();
       this.set('newName', '');
     }
   }
 });
-

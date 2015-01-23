@@ -9,9 +9,9 @@
   <title>Custard Pie</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
-  
+
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-  
+
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/jquery-ui.css">
   <link rel="stylesheet" href="css/jquery.ui.theme.css">
@@ -35,7 +35,7 @@
 			<div id="nav">
 			    <ul>
 			      <li>{{#link-to 'home'}}Home{{/link-to}}</li>
-			      <li>{{#link-to 'schedule'}}Schedule{{/link-to}}</li>				      
+			      <li>{{#link-to 'schedule'}}Schedule{{/link-to}}</li>
 			      <li>{{#link-to 'playlist'}}Playlist{{/link-to}}</li>
 			      <li>{{#link-to 'photos'}}Photos{{/link-to}}</li>
 			    </ul>
@@ -43,23 +43,23 @@
 			<div id="ticket">
 				{{#link-to 'schedule'}}<img src='img/ticket.png' />{{/link-to}}
 			</div>
-    	</div> 
+    	</div>
 
     	<div id="content">
-    		{{outlet}}  
+    		{{outlet}}
     	</div>
 
     	<div id="footer">
     		<div class="container"
 				<hr>
-				<h5>&copy; 2014 Custart Pie Rock and Roll Experience All Rights Reserved</h5>			
+				<h5>&copy; 2014 Custart Pie Rock and Roll Experience All Rights Reserved</h5>
 			</div>
 		</div>
 	</script>
 
 	<script type="text/x-handlebars" id="home">
 		<div id="home" >
-			<span id="bandPicBg" style="background-color: #ffff"> 
+			<span id="bandPicBg" style="background-color: #ffff">
 			<img src='img/band.png' alt="Custard Pie" class='mainPic' />
 			</span>
 			<div style="position: relative;">
@@ -79,11 +79,11 @@
 				<div id="bandDesc">
 					<h2>We Are</h2><h1>Custard Pie</h1>
 					<p>
-					Hello, and welcome to the Custard Pie Website. It&apos;s been another exciting year for us. I don&apos;t think there is a band out there that looks forward to 
-					playing out as much as we do. Just in the past couple of years, Custard Pie has played over two hundred shows, many of which include: 
-					The House of Blues, Rockin&apos; Resort, Put-n-Bay, and over fifty clubs, meeting people from Streetsboro to Willard, Ohio. In our past, we have opened up 
-					for major acts such as Badfinger, Blackfoot and Foghat, just to name a few. We&apos;ve palyed for Harley Davidson Rolling Thunder four times this year. I 
-					can go on and on about certain clubs we&apos;ve played for and people we&apos;ve met. We love them and appreciate their support. I can tell you as a musician, 
+					Hello, and welcome to the Custard Pie Website. It&apos;s been another exciting year for us. I don&apos;t think there is a band out there that looks forward to
+					playing out as much as we do. Just in the past couple of years, Custard Pie has played over two hundred shows, many of which include:
+					The House of Blues, Rockin&apos; Resort, Put-n-Bay, and over fifty clubs, meeting people from Streetsboro to Willard, Ohio. In our past, we have opened up
+					for major acts such as Badfinger, Blackfoot and Foghat, just to name a few. We&apos;ve palyed for Harley Davidson Rolling Thunder four times this year. I
+					can go on and on about certain clubs we&apos;ve played for and people we&apos;ve met. We love them and appreciate their support. I can tell you as a musician,
 					the feeling of waiting for just a simple rehearsal is sensational in this band.
 					</p>
 				</div>
@@ -126,40 +126,40 @@
 							<li>Sweet Leaf</li>
 							<li>War Pigs</li>
 						</ul>
-					</div>	
+					</div>
 					{{#link-to 'playlist'}}<span id="linkPlaylist">See Whole Playlist</span>{{/link-to}}
 				</div>
 				<div id="bandMembers">
 					<h3>The Band</h3>
 					<div class="memberRow">
-						<div class="member">	
+						<div class="member">
 							<img alt="Michael Francis" src="img/MichaelFrancis.png"/>
 							<h4>Michael Francis</h4>
 							<h4>Guitar/Vocals</h4>
 						</div>
-						<div class="member">	
+						<div class="member">
 							<img alt="Pete Felice" src="img/PeteFelice.png"/>
 							<h4>Pete Felice</h4>
 							<h4>Drums/Vocals</h4>
 						</div>
-						<div class="member">	
+						<div class="member">
 							<img alt="Dave Hutson" src="img/DaveHutson.png"/>
 							<h4>Dave Hutson</h4>
 							<h4>Bass/Vocals</h4>
 						</div>
 					</div>
 					<div class="memberRow">
-						<div class="member">	
+						<div class="member">
 							<img alt="Greg Speelman" src="img/GregSpeelman.png"/>
 							<h4>Greg Speelman</h4>
 							<h4>Keyboards</h4>
 						</div>
 					</div>
-				</div>	
-			</div>	
+				</div>
+			</div>
 			<br/>
-			<br/>	
-		</div>	
+			<br/>
+		</div>
 	</script>
 
 	<script type="text/x-handlebars" id="schedule">
@@ -220,7 +220,7 @@
 					<div {{bind-attr id="group"}} class="songlist">
 						{{#each content}}
 							<div class="band">
-								<h2>{{name}}</h2>
+								<h2>{{bandName}}</h2>
 								<ul>
 									{{#each songs}}
 										<li>{{title}}</li>
@@ -240,7 +240,7 @@
 				<h1>Photos</h1>
 
 				{{outlet}}
-				
+
 				<div id="divSmallPhotos">
 		            {{#each photo in controller}}
 			            <div class="divSmallImg">
@@ -267,7 +267,7 @@
             <!--<div id="nextPhoto">
 
         	</div>-->
-        </div>        
+        </div>
     </script>
 
 	<script type="text/x-handlebars" id="admin">
@@ -302,7 +302,7 @@
 			<div class="container">
 				<p class="text-muted">footer</p>
 			</div>
-		</div>-->			
+		</div>-->
 	</script>
 
 	<script type="text/x-handlebars" id="adminHome">
@@ -325,7 +325,7 @@
             			{{view Ember.TextField id="addTime" placeholder="Event Time" valueBinding="newTime"}}
             			{{view Ember.TextField id="addVenue" placeholder="Event Venue" valueBinding="newVenue"}}
             			{{view Ember.TextField id="addAddress" placeholder="Event Address" valueBinding="newAddress"}}
-            			
+
             			<br/>
             			<button id="btnSaveNewEvent" class="btn btn-default" {{action "saveEvent" target="view"}}>Save New Event</button>
             		</div>
@@ -372,7 +372,7 @@
 			<span class="glyphicon glyphicon-remove"></span>
 		</span>
 	</script>
-  
+
     <script type="text/x-handlebars" id="adminPlaylist">
   	  <h1>Playlist</h1>
       <div class="row">
@@ -381,34 +381,34 @@
             <button id="btnAddBand" class="btn btn-default" {{action "addBand" target="view"}}>Add Band</button>
             <div id="addBand">
               {{view Ember.TextField id="addName" placeholder="Band Name" valueBinding="newName"}}
-                  			
+
               <br/>
               <button id="btnSaveNewBand" class="btn btn-default" {{action "saveBand" target="view"}}>Save New Band</button>
             </div>
         		<div class="ember-table-example-container" style="height:500px; width:650px">
         	    {{table-component hasHeader=true hasFooter=false numFixedColumns=0 rowHeight=35 columnsBinding="columns" contentBinding="content"}}
           	</div>
-  
+
   			  </div>
   			</div>
   		</div>
-    
+
   	</script>
- 
+
     <script type="text/x-handlebars" data-template-name="songsCell">
-    
-        {{#link-to 'adminBand' view.bandId classNames="btn btn-default bandSongsLink"}}Edit Songs{{/link-to}} 
+
+        {{#link-to 'adminBand' view.bandId classNames="btn btn-default bandSongsLink"}}Edit Songs{{/link-to}}
     </script>
-    
+
     <script type="text/x-handlebars" id="adminBand">
-      <h1>{{name}}</h1>
+      <h1>{{bandName}}</h1>
       <div class="row">
     	  <div class="col-md-12">
       	  <div class="example-container">
             <button id="btnAddSong" class="btn btn-default" {{action "addSong" target="view"}}>Add Song</button>
             <div id="addSong">
               {{view Ember.TextField id="addTitle" placeholder="Song Title" valueBinding="newTitle"}}
-                			
+
               <br/>
               <button id="btnSaveNewSong" class="btn btn-default" {{action "saveSong" target="view"}}>Save New Song</button>
             </div>
@@ -424,23 +424,23 @@
 		<h1>Photos</h1>
 		{{#link-to 'adminPhoto' className="btn btn-default"}}Add Photo{{/link-to}}
 	</script>
-  
+
     <script type="text/x-handlebars" data-template-name="thumbnailCell">
 		<img width="100" {{bind-attr src="view.cellContent"}}></img>
     </script>
-    
-    <script type="text/x-handlebars" id="adminPhoto">
-		<h1>Photo</h1>
-		{{#each controller.validFiles}}
-			<div {{bind-attr class="className :file"}}>
-		  		{{view view.ImagePreview imageBinding="this" id="imagePreview" }}
-			</div>
-		{{/each}}
-		{{view view.fileField }}
 
-		<button id="btnSaveNewPic" class="btn btn-default" {{action "savePic"}}>Save New Photo</button>
-	</script>
-   
+    <script type="text/x-handlebars" id="adminPhoto">
+  		<h1>Photo</h1>
+  		{{#each controller.validFiles}}
+  			<div {{bind-attr class="className :file"}}>
+  		  		{{view view.ImagePreview imageBinding="this" id="imagePreview" }}
+  			</div>
+  		{{/each}}
+  		{{view view.fileField }}
+
+  		<button id="btnSaveNewPic" class="btn btn-default" {{action "savePic"}}>Save New Photo</button>
+  	</script>
+
 	<script src="js/vendor/jquery-1.10.2.js"></script>
 	<script src="js/vendor/jquery.timepicker.js"></script>
 	<script src="js/vendor/handlebars-1.1.2.js"></script>
@@ -491,6 +491,6 @@
 			    }, 2000);
 			})
 		});
-	</script>  
+	</script>
 </body>
 </html>

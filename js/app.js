@@ -4,8 +4,8 @@ Ember.Handlebars.helper('formatScheduleDate', function(date){
 		var d_names = new Array("Sun", "Mon", "Tues",
 			"Wed", "Thur", "Fri", "Sat");
 
-		var m_names = new Array("January", "February", "March", 
-			"April", "May", "June", "July", "August", "September", 
+		var m_names = new Array("January", "February", "March",
+			"April", "May", "June", "July", "August", "September",
 			"October", "November", "December");
 		var eventDate = moment(date);
 		return eventDate.format("ddd M/D/YY");
@@ -20,7 +20,7 @@ Ember.Handlebars.helper('formatEventDate', function(date){
 CustardPie.PhotoMixin = Ember.Mixin.create({
   mimeTypes: ['image/jpeg', 'image/jpg', 'image/gif', 'image/png', 'text/plain'],
   extensions: ['jpeg', 'jpg', 'gif', 'png'],
-  files: [], 
+  files: [],
   init: function () {
     this.set('files', []);
     this._super();
@@ -29,5 +29,5 @@ CustardPie.PhotoMixin = Ember.Mixin.create({
     addFile: function(file){
       this.get('files').pushObject(file);
     }
-  }  
+  }
 });
