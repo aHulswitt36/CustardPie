@@ -6,16 +6,21 @@ CustardPie.DatePickerTableCell = Ember.Table.TableCell.extend({
 			_picker: null,
 			modelChangedValue: function(){
 				var picker = this.get('_picker');
-				if(picker){
-					picker.datepicker("setDate", this.get("value"));
+				var date = moment(this.get('value'));
+				if(picker && date.isValid()){
+					picker.setDate(date.format("L"));
 				}
 				this.set('parentView.isEditing', false);
 			}.observes("value"),
 			valueBinding: 'parentView.cellContent',
 			didInsertElement: function(){
-				this.set('_picker', this.$().datepicker());
+				var picker = new Pikaday({
+					field: this.$()[0],
+					format: "MM/DD/YYYY"
+				});
+				this.set('_picker', picker);
 				return this.$().focus();
-			},    	focusOut: function(event) {
+			},			willDistroyElement: function(){				var picker = this.get('_picker');				if(picker){					picker.destory();				}				this.set('_picker', null);			},    	focusOut: function(event) {
     	  return this.set('parentView.isEditing', false);
     	}
 		}),

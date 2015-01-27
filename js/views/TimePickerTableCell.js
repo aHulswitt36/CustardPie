@@ -19,9 +19,8 @@ CustardPie.TimePickerTableCell = Ember.Table.TableCell.extend({
 					'timeFormat': 'g:i a'
 				}));
 
-			  	return this.$().focus();
-			},
-    	focusOut: function(event) {
+		  	return this.$().focus();
+			},			willDistroyElement: function(){				var picker = this.get('_picker');				if(picker){					picker.destory();				}				this.set('_picker', null);			},    	focusOut: function(event) {
     	  return this.set('parentView.isEditing', false);
     	}
 		}),
