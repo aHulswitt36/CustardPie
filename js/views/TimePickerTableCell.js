@@ -14,11 +14,11 @@ CustardPie.TimePickerTableCell = Ember.Table.TableCell.extend({
 			valueBinding: 'parentView.cellContent',
 			didInsertElement: function() {
 				this.set('_picker', this.$().timepicker({
-					'minTime': '6:00pm',
+					'minTime': '7:00pm',
 					'maxTime': '1:00am',
 					'timeFormat': 'g:i a'
 				}));
-				
+
 			  	return this.$().focus();
 			},
     	focusOut: function(event) {

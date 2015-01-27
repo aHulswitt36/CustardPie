@@ -54,14 +54,14 @@ CustardPie.AdminScheduleController = Ember.ArrayController.extend({
 	      tableCellViewClass: 'CustardPie.EditableTableCell',
 	      contentPath: key,
 	      setCellContent: function(row, value) {
-	      	row.set(key, value);
-	      	row.save();
-	        	return row.set(key,value);
+	      	// row.set(key, value);
+	      	// row.save();
+        	// return row.set(key,value);
 	      }
 	    });
 	  });
 	  columns.push(removeColumn);
-		columns.unshift(timeColumn);	    
+		columns.unshift(timeColumn);
 	  columns.unshift(dateColumn);
     return columns;
 	}).property(),

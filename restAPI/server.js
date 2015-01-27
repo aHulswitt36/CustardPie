@@ -10,18 +10,12 @@ var allowCrossDomain = function(req, res, next) {
 
     // intercept OPTIONS method
     if ('OPTIONS' == req.method) {
-      res.sendStatus(200);
+      res.status(200).send();
     }
     else {
       next();
     }
 };
-
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
-app.use(allowCrossDomain);
-
-var port = process.env.port || 8080;
 
 mongoose.connect('mongodb://localhost/test');
 var Schedule = require('./models/schedule');
@@ -31,7 +25,6 @@ var Song = require('./models/band').Song;
 var router = express.Router();
 
 router.use(function(req, res, next){
-  console.log('somthing is happening');
   next();
 });
 
@@ -42,17 +35,14 @@ router.get('/', function(req, res){
 router.route('/schedules')
   .post(function(req, res){
     var schedule = new Schedule();
-    schedule.date = req.body.date;
-    schedule.time = req.body.time;
-    schedule.venue = req.body.venue;
-    schedule.location = req.body.location;
+    schedule.date = req.body.schedule.date;
+    schedule.time = req.body.schedule.time;
+    schedule.venue = req.body.schedule.venue;
+    schedule.location = req.body.schedule.location;
 
     schedule.save(function(err){
       if(err)
         res.send(err);
-
-
-      res.json({ message: "Schedule created!"});
     });
   })
   .get(function(req, res){
@@ -78,16 +68,14 @@ router.route('/schedules/:schedule_id')
       if(err)
         res.send(err);
 
-      schedule.date = req.body.date;
-      schedule.time = req.body.time;
-      schedule.venue = req.body.venue;
-      schedule.location = req.body.location;
+      schedule.date = req.body.schedule.date;
+      schedule.time = req.body.schedule.time;
+      schedule.venue = req.body.schedule.venue;
+      schedule.location = req.body.schedule.location;
 
       schedule.save(function(err){
         if(err)
           res.send(err);
-
-        res.json({ message: "Schedule Updated!"});
       });
     });
   })
@@ -98,7 +86,7 @@ router.route('/schedules/:schedule_id')
       if(err)
         res.send(err);
 
-      res.json({success: true});
+      //res.json({success: true});
     });
   });
 
@@ -113,28 +101,14 @@ router.route('/bands')
     });
   })
   .post(function(req, res){
-    console.log("Got Here");
     var band = new Band();
-    band.bandName = req.body.bandName;
-    var songs = [];
-    req.body.songs.forEach(function(song){
-        var newSong = new Song();
-        newSong.title = song.title;
-        newSong._band = band._id;
-        newSong.save(function(err){
-          if(err)
-            res.send(err);
-        });
-        songs.push(newSong);
-    });
-    band.songs = songs;
+    console.log(req.body);
+    band.bandName = req.body.band.bandName;
+    band.songs = [];
 
     band.save(function(err){
       if(err)
         res.send(err);
-
-      res.send(band);
-      console.log('Band Created');
     });
   })
 
@@ -152,26 +126,11 @@ router.route('/bands/:band_id')
       if(err)
         res.send(err);
 
-      if(req.body.bandName != null){
-          band.bandName = req.body.bandName;
-      }
-
-      if(req.body.songs != null){
-        band.songs = [];
-        var songs = [];
-        req.body.songs.forEach(function(song){
-            var newSong = new Song();
-            newSong.title = song.title;
-            songs.push(newSong);
-        });
-        band.songs = songs;
-      }
+      band.bandName = req.body.band.bandName;
 
       band.save(function(err){
         if(err)
           res.send(err);
-        res.send(band);
-        res.json({success: true});
       });
     });
   })
@@ -224,7 +183,11 @@ router.route('/songs/:song_id')
     })
   })
 
+app.set('port', process.env.port || 8080)
+app.use(allowCrossDomain);
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use('/api', router);
 
-app.listen(port);
-console.log('magic happens at port ' + port);
+app.listen(app.get('port'));
+console.log('magic happens at port ' + app.get('port'));

@@ -15,8 +15,7 @@ CustardPie.DatePickerTableCell = Ember.Table.TableCell.extend({
 			didInsertElement: function(){
 				this.set('_picker', this.$().datepicker());
 				return this.$().focus();
-			},
-    	focusOut: function(event) {
+			},    	focusOut: function(event) {
     	  return this.set('parentView.isEditing', false);
     	}
 		}),

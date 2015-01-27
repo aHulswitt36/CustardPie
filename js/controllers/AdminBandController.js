@@ -18,7 +18,7 @@ CustardPie.AdminBandController = Ember.ObjectController.extend({
 	    name = key.charAt(0).toUpperCase() + key.slice(1);
 	    return Ember.Table.ColumnDefinition.create({
 	      columnWidth: 407,
-	      headerCellName: bandName,
+	      headerCellName: name,
 	      tableCellViewClass: 'CustardPie.EditableTableCell',
 	      contentPath: 'title',
 	      setCellContent: function(row, value) {
