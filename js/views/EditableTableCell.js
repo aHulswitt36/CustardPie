@@ -1,8 +1,8 @@
-//Editable Table Cells
 CustardPie.EditableTableCell = Ember.Table.TableCell.extend({
   className: 'editableCell',
   templateName: 'editableScheduleCell',
   isEditing: false,
+  isDirty: false,
   type: 'text',
   innerTextField: Ember.TextField.extend({
   	typeBinding: 'parentView.type',
@@ -12,7 +12,10 @@ CustardPie.EditableTableCell = Ember.Table.TableCell.extend({
   	},
   	focusOut: function(event) {
   	  return this.set('parentView.isEditing', false);
-  	}
+  	},
+    valueChanged: function(){
+      this._parentView._parentView.set('isDirty', true);
+    }.observes('parentView.cellContent')
   }),
   onRowContentDidChange: Ember.observer(function() {
   	return this.set('isEditing', false);

@@ -1,11 +1,6 @@
 CustardPie.AdminScheduleView = Ember.View.extend({
 	actions: {
 		addEvent: function(){
-			var picker = new Pikaday({
-				field: this.$('#addDate')[0],
-				format: "MM/DD/YYYY"
-			});
-			//this.$('#addDate').datepicker();
 			this.$('#addTime').timepicker({
 				'minTime': '6:00pm',
 				'maxTime': '1:00am',

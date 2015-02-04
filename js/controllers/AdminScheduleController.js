@@ -1,12 +1,13 @@
 CustardPie.AdminScheduleController = Ember.ArrayController.extend({
 	sortProperties: ['date'],
 	sortAscending: true ,
+	isDirty: false,
 	numRows: 100,
 	columns: Ember.computed(function() {
 		var columnNames, columns, dateColumn, timeColumn, removeColumn;
 		columnNames = ['venue', 'location'];
 		dateColumn = Ember.Table.ColumnDefinition.create({
-			columnWidth: $(window).width() / 9,
+			columnWidth: '8%',
 			headerCellName: 'Date',
 			isSortable: true,
 			tableCellViewClass: 'CustardPie.DatePickerTableCell',
@@ -24,7 +25,7 @@ CustardPie.AdminScheduleController = Ember.ArrayController.extend({
 			}
 		});
 		timeColumn = Ember.Table.ColumnDefinition.create({
-			columnWidth: $(window).width() / 9,
+			columnWidth: '5%',
 			headerCellName: 'Time',
 			tableCellViewClass: 'CustardPie.TimePickerTableCell',
 			contentPath: 'time',
@@ -36,8 +37,8 @@ CustardPie.AdminScheduleController = Ember.ArrayController.extend({
 			}
 		});
 		removeColumn = Ember.Table.ColumnDefinition.create({
-			columnWidth: 40,
-      		maxWidth: 40,
+			columnWidth: '6%',
+			headerCellName: 'Actions',
 			tableCellViewClass: 'CustardPie.RemoveActionTableCell',
 			setCellContent: function(row, value){
 				row.deleteRecord();
@@ -48,16 +49,11 @@ CustardPie.AdminScheduleController = Ember.ArrayController.extend({
 	    var name;
 	    name = key.charAt(0).toUpperCase() + key.slice(1);
 	    return Ember.Table.ColumnDefinition.create({
-	      columnWidth: $(window).width() / 4,
-	      maxWidth: 300,
+	      columnWidth: '28%',
+	      maxWidth: 20,
 	      headerCellName: name,
 	      tableCellViewClass: 'CustardPie.EditableTableCell',
-	      contentPath: key,
-	      setCellContent: function(row, value) {
-	      	// row.set(key, value);
-	      	// row.save();
-        	// return row.set(key,value);
-	      }
+	      contentPath: key
 	    });
 	  });
 	  columns.push(removeColumn);
