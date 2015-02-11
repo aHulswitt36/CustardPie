@@ -47,6 +47,7 @@
 	src: url(../css/Tinet/TungusFont_Tinet.ttf);
 }
 
+
 html, body {
     margin: 0;
     width: 100%;
@@ -61,107 +62,6 @@ body{
 	background-size: 90%;
 	background-position-x: 50%;
 	-moz-background-position-x: 50%;
-}
-
-hr {
-	height: 6px;
-	width: 94%;
-	background-color: #7DF3F3;
-	border: none;
-}
-
-.header{
-	background: url(../img/header.png) repeat-x;
-	text-align: center;
-	min-height: 120px;
-	margin: 0 0 0 40px;
-	width: 91%;
-	background-size: 120px;
-	position: relative;
-	z-index: 100;
-}
-
-#divSmallPhotos{
-	position: relative;
-	top: 50%;
-	left: 5%;
-}
-
-.thumbnailItem {
-    width: 75px;
-    height: 75px;
-    float: left;
-    margin-right: 10px;
-    cursor:pointer;
-}
-
-.thumbnailItem.is-selected {
-    border: 2px solid #000;
-    width: 100px;
-    height: 100px;
-}
-
-.thumbnailViewList {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
-    height: 100px;
-}
-
-#logo {
-	top: 20%;
-	left: 15.75%;
-	position: relative;
-  z-index: 1;
-}
-
-img.expand{
-	width: 25em;
-}
-
-#ticket{
-	float: left;
-	left: 11.75%;
-	top: 90px;
-	z-index: 2;
-	position: absolute;
-}
-#ticket a img {
-	width: 85%;
-}
-
-#nav{
-	float: right;
-	position: absolute;
-	top: 40px;
-	left: 55%;
-}
-
-#nav ul{
-	clear: both;
-	float: right;
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	list-style: none;
-	position: relative;
-	z-index: 1000;
-}
-
-#nav ul li {
-	display: inline-block;
-}
-
-#nav ul li a{
-	font-family: 'Tinet';
-	font-size: 23px;
-	margin-right: 20px;
-	color: #fff;
-	text-decoration: none;
-}
-#nav ul li a:hover{
-	color: #7DF3F3;
 }
 
 #content{
@@ -180,95 +80,7 @@ img.expand{
 	height: 100px;
 }
 
-.mainPic{
-	height: 420px;
-	width: 56.5%;
-	margin-left: 20%;
-	margin-top: 35px;
-	border: 12px solid;
-	border-color: #242323;
-}
-#bandPicBg {
-	z-index: 1;
-	position: relative;
-}
-#home h2{
-	font-family: 'Tinet';
-	margin-top: 15px;
-	color: #7DF3F3;
-	font-weight: normal;
-	font-size: 40px;
-	height: 16px;
-}
-h1{
-	font-family: 'Tinet';
-	margin-top: 0px;
-	color: #7DF3F3;
-	font-weight: normal;
-	font-size: 70px;
-}
 
-#home{
-	position: relative;
-	top: 35px;
-}
-
-#home h3{
-	font-family: 'Tinet';
-	margin-top: 10px;
-	color: #7DF3F3;
-	font-weight: normal;
-	font-size: 28px;
-	height: 16px;
-}
-
-#home h4{
-	font-family: 'Tinet';
-	font-size: 14px;
-}
-
-h5{
-	font-family: "Tinet";
-	color: white;
-	margin-left: 250px;
-	font-size: 9px;
-}
-
-#home #bandDesc{
-	color: white;
-	font-size: 14px;
-	margin-left: 21%;
-	margin-right: 41%;
-}
-#home #bandDesc h1{
-	margin-top: 25px;
-}
-
-#home #bandMembers{
-	color: white;
-	font-size: 10px;
-	margin-left: 21%;
-}
-#home #upcomingShows{
-	background: url(../img/upcomingshows.png) no-repeat;
-	position: absolute;
-	background-size: 100%;
-	width: 290px;
-	height: 260px;
-	z-index: 0;
-	top: -70px;
-	left: 60%;
-	font-family: 'Tinet';
-}
-#home #upcomingShows h3{
-	font-family: 'Tinet';
-	margin-top: 65px;
-	color: #7DF3F3;
-	text-align: center;
-	font-weight: normal;
-	font-size: 27px;
-	height: 20px;
-}
 #home #upcomingShows ul{
 	color: white;
 	list-style-type: none;
@@ -297,223 +109,491 @@ h5{
 	top: 450px;
 }
 
-#home #bandMembers img{
-	width: 132px;
-	border: 9px solid;
-	border-color: #242323;
-	margin-right: 15px;
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+	.header {
+		background: url(../img/header.png) repeat-x;
+		min-height: 120px;
+		width: 94%;
+		background-size: 100px;
+		position: relative;
+		z-index: 100;
+		left: 3%;
+	}
+
+	#logo {
+		top: 20%;
+		left: 5%;
+		position: absolute;
+		z-index: 1;
+	}
+
+	img.expand {
+		width: 70%;
+	}
+
+	#nav{
+		display: none;
+	}
+
+	#ticket{
+		display: none;
+	}
+
+	h5{
+		font-family: "Tinet";
+		color: white;
+		font-size: 9px;
+	}
+
+	#content{
+		top: -67px;
+	}
+
+	.mainPic {
+		width: 88%;
+		border: 6px solid;
+		border-color: #242323;
+		position: relative;
+		left: 6%;
+	}
+
+	#home h2, #home h1{
+		display: none;
+	}
+
+	#home #upcomingShows {
+		position: relative;
+		font-family: 'Tinet';
+	}
+
+	#home #upcomingShows h3 {
+		font-family: 'Tinet';
+		color: #7DF3F3;
+		text-align: center;
+		font-weight: normal;
+		font-size: 27px;
+		height: 20px;
+	}
+
+	#bandDesc, #bandPlaylist, #bandMembers {
+		display: none;
+	}
 }
 
-#home #bandMembers .memberRow{
-	margin-top: 35px;
-}
+@media only screen
+and (min-device-width : 900px){
 
-.memberRow .member{
-	display: inline-block;
-}
+	hr {
+		height: 6px;
+		width: 94%;
+		background-color: #7DF3F3;
+		border: none;
+	}
 
-#home #bandPlaylist{
-	background: url(../img/playlist.png) no-repeat;
-	position: absolute;
-	background-size: 100%;
-	width: 250px;
-	height: 80%;
-	z-index: 0;
-	top: -170px;
-	left: 63%;
-	font-family: 'Tinet';
-}
+	.header{
+		background: url(../img/header.png) repeat-x;
+		text-align: center;
+		min-height: 120px;
+		margin: 0 0 0 40px;
+		width: 91%;
+		background-size: 120px;
+		position: relative;
+		z-index: 100;
+	}
 
-#bandPlaylist h3{
-	margin-left: 30px;
-}
+	#divSmallPhotos{
+		position: relative;
+		top: 50%;
+		left: 5%;
+	}
 
-#bandPlaylist h4{
-	font-size: 15px;
-	margin: 0px !important;
-}
+	.thumbnailItem {
+	    width: 75px;
+	    height: 75px;
+	    float: left;
+	    margin-right: 10px;
+	    cursor:pointer;
+	}
 
-#bandPlaylist #smallPlaylist{
-	color: white;
-	margin-left: 30px;
-	margin-top: 20px;
-}
+	.thumbnailItem.is-selected {
+	    border: 2px solid #000;
+	    width: 100px;
+	    height: 100px;
+	}
 
-#bandPlaylist #smallPlaylist ul{
-	font-family: "Lato-Regular";
-	font-size: 10.5px;
-	list-style: none;
-}
-#bandPlaylist #smallPlaylist ul{
-	margin: 0 0 0 25px;
-}
-#bandPlaylist #smallPlaylist ul li{
-	margin-left: -20px;
-}
+	.thumbnailViewList {
+	    position: absolute;
+	    bottom: 10px;
+	    left: 10px;
+	    right: 10px;
+	    height: 100px;
+	}
 
-#linkPlaylist{
-	margin-left: 100px;
-	color: red;
-}
+	#logo {
+		top: 20%;
+		left: 15.75%;
+		position: absolute;
+	  z-index: 1;
+	}
 
-#schedule, #playlist, #photos{
-	position: relative;
-	top: 15px;
-}
+	img.expand{
+		width: 25em;
+	}
 
-#scheduleDiv, #playlistDiv, #photoDiv{
-	background: url(../img/int-background.png) no-repeat;
-	background-size: 100%;
-	width: 60%;
-	min-height: 600px;
-	margin-left: 18%;
-	padding-top: 85px;
-}
+	#ticket{
+		float: left;
+		left: 11.75%;
+		top: 90px;
+		z-index: 2;
+		position: absolute;
+	}
+	#ticket a img {
+		width: 85%;
+	}
 
-#scheduleDiv h1, #playlistDiv h1, #photoDiv h1{
-	padding-top: 65px;
-	padding-left: 25px;
-}
-#schedule h4, #playlist h4{
-	font-family: "Tinet";
-	color: white;
-	font-size: 26px;
-}
-#schedule h5, #playlist h5{
-	font-family: "Tinet";
-	color: white;
-	margin-left: 0px !important;
-	font-size: 17px;
-}
-.scheduleDate{
-	margin-left: 25px;
-	display: inline-block;
-	width: 15%;
-	margin-right: 5%;
-}
-.scheduleTime{
-	display: inline-block;
-	width: 11%;
-}
-.scheduleVenue{
-	display: inline-block;
-	width: 31%;
-}
-.scheduleLocation{
-	display: inline-block;
-}
-.scheduleRowDate{
-	margin-left: 25px;
-	display: inline-block;
-	margin-right: 5%;
-	width: 16%;
-	word-wrap: break-word;
-}
-.scheduleRowTime{
-	display: inline-block;
-	width: 11%;
-}
-.scheduleRowVenue{
-	display: inline-block;
-	width: 31%;
-}
-.scheduleRowLocation{
-	display: inline-block;
-	word-wrap: break-word;
-	width: 25%;
-}
+	#nav{
+		float: right;
+		position: absolute;
+		top: 40px;
+		left: 55%;
+	}
 
-#playlistFilter{
-	list-style-type: none;
-}
-#playlistFilter li{
-	display: inline-block;
-	font-family: "Tinet";
-	font-size: 22px;
-	margin-right: 10px;
-}
-#playlistFilter li a{
-	color: #fff;
-}
-#playlistFilter li a:hover{
- 	color: #7DF3F3;
-}
-.band{
-	display: inline-block;
-	vertical-align: top;
-	padding-right: 25px;
-}
-.band ul{
-	list-style-type: none;
-	color: white;
-	padding-left: 10px;
-}
-#playlistDiv h2{
-	font-family: "Tinet";
-	color: white;
-	font-size: 25px;
-}
-.songlist{
-	margin-left: 25px;
-}
+	#nav ul{
+		clear: both;
+		float: right;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		list-style: none;
+		position: relative;
+		z-index: 1000;
+	}
 
-#spnLargePhoto{
-	z-index: 1;
-	position: relative;
-	left: 35px;
-	background-color: #ffff;
-}
-.largePic{
-	height: 420px;
-	width: 91%;
-	border: 12px solid;
-	border-color: #242323;
-}
+	#nav ul li {
+		display: inline-block;
+	}
 
-.divSmallImg{
-	position: relative;
-	top: 30px;
-	left: 35px;
-	display: inline-block;
-	padding: 0 24px 24px 0;
-	width: 28%;
-}
+	#nav ul li a{
+		font-family: 'Tinet';
+		font-size: 23px;
+		margin-right: 20px;
+		color: #fff;
+		text-decoration: none;
+	}
+	#nav ul li a:hover{
+		color: #7DF3F3;
+	}
 
-.divSmallImg img{
-	width: 100%;
-	border: 2px solid;
-}
+	.mainPic{
+		height: 420px;
+		width: 56.5%;
+		margin-left: 20%;
+		margin-top: 35px;
+		border: 12px solid;
+		border-color: #242323;
+	}
+	#bandPicBg {
+		z-index: 1;
+		position: relative;
+	}
+	#home h2{
+		font-family: 'Tinet';
+		margin-top: 15px;
+		color: #7DF3F3;
+		font-weight: normal;
+		font-size: 40px;
+		height: 16px;
+	}
+	h1{
+		font-family: 'Tinet';
+		margin-top: 0px;
+		color: #7DF3F3;
+		font-weight: normal;
+		font-size: 70px;
+	}
 
-img.thumbnailItem {
-    cursor:pointer;
-}
+	#home{
+		position: relative;
+		top: 35px;
+	}
 
-#selectedPhoto{
+	#home h3{
+		font-family: 'Tinet';
+		margin-top: 10px;
+		color: #7DF3F3;
+		font-weight: normal;
+		font-size: 28px;
+		height: 16px;
+	}
 
-}
+	#home h4{
+		font-family: 'Tinet';
+		font-size: 14px;
+	}
 
-.selectedPhotoItem{
-	display: inline-block;
-	margin-left: 15%;
-}
+	h5{
+		font-family: "Tinet";
+		color: white;
+		margin-left: 250px;
+		font-size: 9px;
+	}
 
-.selectedPhotoItem img {
-    border-radius: 25px;
-    -moz-bottomleft: 25px;
-    width: 90%;
-}
+	#home #bandDesc{
+		color: white;
+		font-size: 14px;
+		margin-left: 21%;
+		margin-right: 41%;
+	}
+	#home #bandDesc h1{
+		margin-top: 25px;
+	}
 
-#previousPhoto, #nextPhoto{
-	background-color: black;
-	height: 430px;
-	width: 15%;
-	display: inline-block;
-}
+	#home #bandMembers{
+		color: white;
+		font-size: 10px;
+		margin-left: 21%;
+	}
+	#home #upcomingShows{
+		background: url(../img/upcomingshows.png) no-repeat;
+		position: absolute;
+		background-size: 100%;
+		width: 290px;
+		height: 260px;
+		z-index: 0;
+		top: -70px;
+		left: 60%;
+		font-family: 'Tinet';
+	}
+	#home #upcomingShows h3{
+		font-family: 'Tinet';
+		margin-top: 65px;
+		color: #7DF3F3;
+		text-align: center;
+		font-weight: normal;
+		font-size: 27px;
+		height: 20px;
+	}
 
-#previousPhoto{
-	float: left;
-}
+	#home #bandMembers img{
+		width: 132px;
+		border: 9px solid;
+		border-color: #242323;
+		margin-right: 15px;
+	}
 
-#nextPhoto{
-	float: right;
+	#home #bandMembers .memberRow{
+		margin-top: 35px;
+	}
+
+	.memberRow .member{
+		display: inline-block;
+	}
+
+	#home #bandPlaylist{
+		background: url(../img/playlist.png) no-repeat;
+		position: absolute;
+		background-size: 100%;
+		width: 250px;
+		height: 80%;
+		z-index: 0;
+		top: -170px;
+		left: 63%;
+		font-family: 'Tinet';
+	}
+
+	#bandPlaylist h3{
+		margin-left: 30px;
+	}
+
+	#bandPlaylist h4{
+		font-size: 15px;
+		margin: 0px !important;
+	}
+
+	#bandPlaylist #smallPlaylist{
+		color: white;
+		margin-left: 30px;
+		margin-top: 20px;
+	}
+
+	#bandPlaylist #smallPlaylist ul{
+		font-family: "Lato-Regular";
+		font-size: 10.5px;
+		list-style: none;
+	}
+	#bandPlaylist #smallPlaylist ul{
+		margin: 0 0 0 25px;
+	}
+	#bandPlaylist #smallPlaylist ul li{
+		margin-left: -20px;
+	}
+
+	#linkPlaylist{
+		margin-left: 100px;
+		color: red;
+	}
+
+	#schedule, #playlist, #photos{
+		position: relative;
+		top: 15px;
+	}
+
+	#scheduleDiv, #playlistDiv, #photoDiv{
+		background: url(../img/int-background.png) no-repeat;
+		background-size: 100%;
+		width: 60%;
+		min-height: 600px;
+		margin-left: 18%;
+		padding-top: 85px;
+	}
+
+	#scheduleDiv h1, #playlistDiv h1, #photoDiv h1{
+		padding-top: 65px;
+		padding-left: 25px;
+	}
+	#schedule h4, #playlist h4{
+		font-family: "Tinet";
+		color: white;
+		font-size: 26px;
+	}
+	#schedule h5, #playlist h5{
+		font-family: "Tinet";
+		color: white;
+		margin-left: 0px !important;
+		font-size: 17px;
+	}
+	.scheduleDate{
+		margin-left: 25px;
+		display: inline-block;
+		width: 15%;
+		margin-right: 5%;
+	}
+	.scheduleTime{
+		display: inline-block;
+		width: 11%;
+	}
+	.scheduleVenue{
+		display: inline-block;
+		width: 31%;
+	}
+	.scheduleLocation{
+		display: inline-block;
+	}
+	.scheduleRowDate{
+		margin-left: 25px;
+		display: inline-block;
+		margin-right: 5%;
+		width: 16%;
+		word-wrap: break-word;
+	}
+	.scheduleRowTime{
+		display: inline-block;
+		width: 11%;
+	}
+	.scheduleRowVenue{
+		display: inline-block;
+		width: 31%;
+	}
+	.scheduleRowLocation{
+		display: inline-block;
+		word-wrap: break-word;
+		width: 25%;
+	}
+
+	#playlistFilter{
+		list-style-type: none;
+	}
+	#playlistFilter li{
+		display: inline-block;
+		font-family: "Tinet";
+		font-size: 22px;
+		margin-right: 10px;
+	}
+	#playlistFilter li a{
+		color: #fff;
+	}
+	#playlistFilter li a:hover{
+	 	color: #7DF3F3;
+	}
+	.band{
+		display: inline-block;
+		vertical-align: top;
+		padding-right: 25px;
+	}
+	.band ul{
+		list-style-type: none;
+		color: white;
+		padding-left: 10px;
+	}
+	#playlistDiv h2{
+		font-family: "Tinet";
+		color: white;
+		font-size: 25px;
+	}
+	.songlist{
+		margin-left: 25px;
+	}
+
+	#spnLargePhoto{
+		z-index: 1;
+		position: relative;
+		left: 35px;
+		background-color: #ffff;
+	}
+	.largePic{
+		height: 420px;
+		width: 91%;
+		border: 12px solid;
+		border-color: #242323;
+	}
+
+	.divSmallImg{
+		position: relative;
+		top: 30px;
+		left: 35px;
+		display: inline-block;
+		padding: 0 24px 24px 0;
+		width: 28%;
+	}
+
+	.divSmallImg img{
+		width: 100%;
+		border: 2px solid;
+	}
+
+	img.thumbnailItem {
+	    cursor:pointer;
+	}
+
+	#selectedPhoto{
+
+	}
+
+	.selectedPhotoItem{
+		display: inline-block;
+		margin-left: 15%;
+	}
+
+	.selectedPhotoItem img {
+	    border-radius: 25px;
+	    -moz-bottomleft: 25px;
+	    width: 90%;
+	}
+
+	#previousPhoto, #nextPhoto{
+		background-color: black;
+		height: 430px;
+		width: 15%;
+		display: inline-block;
+	}
+
+	#previousPhoto{
+		float: left;
+	}
+
+	#nextPhoto{
+		float: right;
+	}
 }
