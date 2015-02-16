@@ -79,6 +79,16 @@
 					{{#link-to 'schedule'}}<span class="seeMoreShows">See More Shows</span>{{/link-to}}
 				</div>
 
+        <div id="upcomingShowsMobile">
+          {{#link-to 'schedule' class='mobileLink'}}<span class="mobileText">Come See Us Play <span class="glyphicon glyphicon-chevron-right"></span></span>{{/link-to}}
+        </div>
+        <div id="playlistMobile">
+            {{#link-to 'playlist' class='mobileLink'}}<span class="mobileText">What We Play <span class="glyphicon glyphicon-chevron-right"></span></span>{{/link-to}}
+        </div>
+        <div id="contactUs">
+            {{#link-to 'contact' class='mobileLink'}}<span class="mobileText">Contact Us <span class="glyphicon glyphicon-chevron-right"></span></span>{{/link-to}}
+        </div>
+
 				<div id="bandDesc">
 					<h2>We Are</h2><h1>Custard Pie</h1>
 					<p>
@@ -272,6 +282,10 @@
         	</div>-->
         </div>
     </script>
+
+  <script type="text/x-handlebars" id="contact">
+    <h1>Please contact us at joeshmoe@gmail.com</h1>
+  </script>
 
 	<script type="text/x-handlebars" id="admin">
 		<link rel="stylesheet" href="css/admin.css">

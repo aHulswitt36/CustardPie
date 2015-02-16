@@ -7,8 +7,9 @@ CustardPie.Router.map(function(){
 		this.resource('photos', {path: "/photos"}, function(){
 			this.route("selectedPhoto", {path: "/:photo_id"})
 		});
+		this.resource('contact');
 	});
-	
+
 	this.resource('admin', { path: '/admin' }, function(){
 		this.resource('adminHome', { path: '/' });
 		this.resource('adminSchedule', {path: '/schedule'});
@@ -38,6 +39,12 @@ CustardPie.PhotosRoute = Ember.Route.extend({
 		return this.store.find('photo');
 	}
 });
+
+// CustardPie.ContactRoute = Ember.Router.extend({
+// 	model: function(){
+//
+// 	}
+// })
 
 
 //ADMIN ROUTES
