@@ -38,11 +38,11 @@ CustardPie.AdminBandController = Ember.ObjectController.extend({
 
       var newSong = this.get('store').createRecord('song', {
         title: title,
-        band: band
+        _band: band
       });
 
       newSong.save().then(function(song){
-        var songBand = song.get('band');
+        var songBand = song.get('_band');
         songBand.get('songs').pushObject(newSong);
         songBand.save();
       });

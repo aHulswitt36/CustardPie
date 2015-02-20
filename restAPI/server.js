@@ -29,7 +29,7 @@ router.use(function(req, res, next){
 });
 
 router.get('/', function(req, res){
-  res.json({ message : 'hooray! welcome'});
+  //res.json({ message : 'hooray! welcome'});
 });
 
 router.route('/schedules')
@@ -118,7 +118,7 @@ router.route('/bands/:band_id')
       if(err)
         res.send(err);
 
-      res.json(band);
+      res.json({band: band});
     });
   })
   .put(function(req, res){
@@ -140,8 +140,6 @@ router.route('/bands/:band_id')
     }, function(err, band){
       if(err)
         res.send(err);
-
-      res.json({success: true});
     });
   });
 
@@ -153,6 +151,30 @@ router.route('/songs/:band_id')
         res.send(err);
 
       res.json({songs:songs});
+    });
+  });
+
+router.route('/songs')
+  .post(function(req, res){
+    var song = new Song();
+    console.log(req.body);
+    song.title = req.body.song.title;
+    song._band = req.body.song._band;
+
+    song.save(function(err){
+      if(err)
+        res.send(err);
+    })
+
+    Band.findById(req.body.song._band, function(err, band){
+      if(err)
+        res.send(err);
+
+      band.songs.push(song._id);
+      band.save(function(err){
+        if(err)
+          res.send(err);
+      });
     });
   });
 
@@ -168,7 +190,6 @@ router.route('/songs/:song_id')
       song.save(function(err){
         if(err)
           res.send(err);
-        res.json({success: true})
       });
     });
   })
@@ -178,8 +199,6 @@ router.route('/songs/:song_id')
     }, function(err, band){
       if(err)
         res.send(err);
-
-      res.json({success: true});
     })
   })
 
