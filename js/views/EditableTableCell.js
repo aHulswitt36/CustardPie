@@ -13,7 +13,7 @@ CustardPie.EditableTableCell = Ember.Table.TableCell.extend({
   	focusOut: function(event) {
   	  return this.set('parentView.isEditing', false);
   	},
-    valueChanged: function(){
+    valueChanged: function(row){
       this._parentView._parentView.set('isDirty', true);
     }.observes('parentView.cellContent')
   }),

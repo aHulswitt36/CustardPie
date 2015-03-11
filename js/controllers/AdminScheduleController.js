@@ -53,7 +53,11 @@ CustardPie.AdminScheduleController = Ember.ArrayController.extend({
 	      maxWidth: 20,
 	      headerCellName: name,
 	      tableCellViewClass: 'CustardPie.EditableTableCell',
-	      contentPath: key
+	      contentPath: key,
+				setCellContent: function(row, value){
+					row.set(key, value);
+					row.save();
+				}
 	    });
 	  });
 	  columns.push(removeColumn);

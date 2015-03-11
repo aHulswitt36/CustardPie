@@ -68,6 +68,8 @@ router.route('/schedules/:schedule_id')
       if(err)
         res.send(err);
 
+        console.log(req.body.schedule);
+
       schedule.date = req.body.schedule.date;
       schedule.time = req.body.schedule.time;
       schedule.venue = req.body.schedule.venue;
