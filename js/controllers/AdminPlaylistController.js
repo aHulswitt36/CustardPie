@@ -28,7 +28,7 @@ CustardPie.AdminPlaylistController = Ember.ArrayController.extend({
 	    var name;
 	    name = key.charAt(0).toUpperCase() + key.slice(1);
 	    return Ember.Table.ColumnDefinition.create({
-	      columnWidth: $(window).width() / 4,
+	      columnWidth: $(window).width() / 5,
 	      headerCellName: name,
 	      tableCellViewClass: 'CustardPie.EditableTableCell',
 	      contentPath: 'bandName',
