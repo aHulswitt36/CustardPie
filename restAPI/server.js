@@ -119,7 +119,7 @@ router.route('/bands/:band_id')
     Band.findById(req.params.band_id, function(err, band){
       if(err)
         res.send(err);
-
+      console.log(band);
       res.json({band: band});
     });
   })

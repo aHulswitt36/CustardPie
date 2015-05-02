@@ -4,12 +4,12 @@ CustardPie.Store = DS.Store.extend({
 });
 
 CustardPie.ApplicationAdapter = DS.FixtureAdapter.extend();
-
+//
 // CustardPie.ApplicationAdapter = DS.RESTAdapter.extend({
 // 	host: 'http://localhost:8080',
 // 	namespace: 'api'
 // });
-
+//
 // CustardPie.ApplicationSerializer = DS.RESTSerializer.extend({
 // 	primaryKey: '_id'
 // });

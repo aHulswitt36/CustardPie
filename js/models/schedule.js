@@ -32,14 +32,14 @@ CustardPie.Schedule.FIXTURES = [
 		id: '7',
 		date: new Date(moment('4/11/2015')._i),
 		time: '9:00 pm',
-		venue: "Scoundrel's",
+		venue: "The band had to reschedule this date due to family scheduling - we apologize",
 		location: '826 Front St. Berea, OH 44017'
 	},
 	{
 		id: '8',
 		date: new Date(moment('4/18/2015')._i),
 		time: '9:00 pm',
-		venue: "Happy Moose Bar and Grill",
+		venue: "The band had to reschedule this date due to family scheduling - we apologize",
 		location: '9436 Ohio 14 Streetsboro, OH 44241'
 	},
 	{
@@ -55,6 +55,13 @@ CustardPie.Schedule.FIXTURES = [
 		time: '9:00 pm',
 		venue: "Manzo's Sports & Spirits",
 		location: '65 Pearl Rd. Brunswick, OH 44212'
+	},
+	{
+		id: '27',
+		date: new Date(moment('5/9/2015')._i),
+		time: '9:00 pm',
+		venue: "Happy Moose",
+		location: '9436 OH-14, Streetsboro, OH 44241'
 	},
 	{
 		id: '11',

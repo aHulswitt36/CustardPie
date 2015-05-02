@@ -4,9 +4,9 @@ CustardPie.Router.map(function(){
 		this.resource('home', { path: '/'});
 		this.resource('schedule');
 		this.resource('playlist');
-		this.resource('photos', {path: "/photos"}, function(){
+		/* this.resource('photos', {path: "/photos"}, function(){
 			this.route("selectedPhoto", {path: "/:photo_id"})
-		});
+		}); */
 		this.resource('contact');
 	});
 
@@ -16,7 +16,9 @@ CustardPie.Router.map(function(){
 		this.resource('adminPlaylist', {path: '/playlist'});
 		this.resource('adminPhotos', {path:'/photos'});
     this.resource('adminPhoto', {path: '/photos/photo/add'});
-    this.resource('adminBand', {path: '/band/:band_id'});
+    this.resource('adminBand', {path: '/band/:band_id'}, function(){
+			this.resource('song', {path: '/song/:song_id'});
+		});
 	});
 });
 
@@ -34,11 +36,11 @@ CustardPie.PlaylistRoute = Ember.Route.extend({
 	}
 });
 
-CustardPie.PhotosRoute = Ember.Route.extend({
+/* CustardPie.PhotosRoute = Ember.Route.extend({
 	model: function(){
 		return this.store.find('photo');
 	}
-});
+}); */
 
 // CustardPie.ContactRoute = Ember.Router.extend({
 // 	model: function(){
@@ -63,6 +65,7 @@ CustardPie.AdminPlaylistRoute = Ember.Route.extend({
 CustardPie.AdminBandRoute = Ember.Route.extend({
   model: function(params){
      var band = this.store.find('band', params.band_id);
+
      return band;
   }
 });
