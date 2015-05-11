@@ -330,6 +330,20 @@
 		</div>-->
 	</script>
 
+  <script type="text/x-handlebars" id="login">
+    <div class="jumbotron">
+      <form class="form-horizontal" {{action "loginUser" on="submit"}}>
+        <div class="form-group">
+          {{input value=username_or_email type="text" class="form-control input-lg" id="username" placeholder="Enter username"}}
+        </div>
+        <div class="form-group">
+          {{input value=password type="password" class="form-control input-lg" id="password" placeholder="Password"}}
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">Login</button>
+      </form>
+    </div>
+  </script>
+
 	<script type="text/x-handlebars" id="adminHome">
 		<h1>Home</h1>
 		<h2>Message to the Fans</h2>
@@ -475,19 +489,25 @@
 	<script src="js/vendor/ember-1.3.0.js"></script>
 	<script src="js/vendor/ember-data.js"></script>
 	<script src="js/vendor/ember-table.js"></script>
+  <script src="js/vendor/localstorage_adapter.js"></script>
 	<script src="js/vendor/antiscroll.js"></script>
 	<script src="js/vendor/moment.min.js"></script>
+  <script src="js/vendor/jquery.cookie.js"></script>
 	<script src="js/app.js"></script>
+  <script src="js/AuthenticatedRoute.js"></script>
 	<script src="js/router.js"></script>
 	<script src="js/models/store.js"></script>
 	<script src="js/models/schedule.js"></script>
 	<script src="js/models/band.js"></script>
 	<script src="js/models/song.js"></script>
-	<script src="js/models/photo.js"></script>
+  <script src="js/models/photo.js"></script>
+  <script src="js/models/apiKey.js"></script>
+  <script src="js/models/adminUser.js"></script>
 	<script src="js/vendor/bootstrap.js"></script>
   <script src="js/vendor/pikaday.js"></script>
 	<script src="js/controllers/PlaylistController.js"></script>
   <script src="js/controllers/ScheduleController.js"></script>
+  <script src="js/controllers/LoginController.js"></script>
 	<script src="js/controllers/AdminScheduleController.js"></script>
 	<script src="js/controllers/AdminPlaylistController.js"></script>
 	<script src="js/controllers/AdminBandController.js"></script>
@@ -495,6 +515,7 @@
 	<script src="js/controllers/AdminPhotoController.js"></script>
 	<script src="js/controllers/PhotosController.js"></script>
 	<script src="js/controllers/SelectedPhotoController.js"></script>
+  <script src="js/controllers/ApplicationController.js"></script>
 	<script src="js/views/PhotoThumbnailView.js"></script>
 	<script src="js/views/AdminScheduleView.js"></script>
 	<script src="js/views/AdminPlaylistView.js"></script>

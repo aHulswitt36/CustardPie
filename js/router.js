@@ -11,6 +11,7 @@ CustardPie.Router.map(function(){
 	});
 
 	this.resource('admin', { path: '/admin' }, function(){
+		this.resource('login', {path: '/login'});
 		this.resource('adminHome', { path: '/' });
 		this.resource('adminSchedule', {path: '/schedule'});
 		this.resource('adminPlaylist', {path: '/playlist'});
@@ -22,7 +23,14 @@ CustardPie.Router.map(function(){
 	});
 });
 
-
+CustardPie.ApplicationRoute = Ember.Route.extend({
+	actions: {
+		logout: function(){
+			this.controllerFor('login').reset();
+			this.transitionTo('login');
+		}
+	}
+});
 
 CustardPie.ScheduleRoute = Ember.Route.extend({
 	model: function(){
@@ -42,27 +50,34 @@ CustardPie.PlaylistRoute = Ember.Route.extend({
 	}
 }); */
 
-// CustardPie.ContactRoute = Ember.Router.extend({
-// 	model: function(){
-//
-// 	}
-// })
-
 
 //ADMIN ROUTES
-CustardPie.AdminScheduleRoute = Ember.Route.extend({
+CustardPie.LoginRoute = Ember.Route.extend({
+	setupController: function(controller, context){
+		controller.reset();
+	},
+	beforeModel: function(transition){
+		if(!Ember.isEmpty(this.controllerFor('login').get('token'))){
+			this.transitionTo('adminHome');
+		}
+	}
+});
+
+CustardPie.AdminHomeRoute = CustardPie.AuthenticatedRoute.extend();
+
+CustardPie.AdminScheduleRoute = CustardPie.AuthenticatedRoute.extend({
 	model: function(){
 		return this.store.find('schedule');
 	}
 });
 
-CustardPie.AdminPlaylistRoute = Ember.Route.extend({
+CustardPie.AdminPlaylistRoute = CustardPie.AuthenticatedRoute.extend({
 	model: function(){
 		return this.store.find('band');
 	}
 });
 
-CustardPie.AdminBandRoute = Ember.Route.extend({
+CustardPie.AdminBandRoute = CustardPie.AuthenticatedRoute.extend({
   model: function(params){
      var band = this.store.find('band', params.band_id);
 
@@ -70,7 +85,7 @@ CustardPie.AdminBandRoute = Ember.Route.extend({
   }
 });
 
-CustardPie.AdminPhotosRoute = Ember.Route.extend({
+CustardPie.AdminPhotosRoute = CustardPie.AuthenticatedRoute.extend({
   model: function(){
     return this.store.find('photo');
   }

@@ -204,6 +204,11 @@ router.route('/songs/:song_id')
     })
   })
 
+router.route('/session')
+  .post(function(req, res){
+
+  })
+
 app.set('port', process.env.port || 8080)
 app.use(allowCrossDomain);
 app.use(bodyParser.urlencoded({ extended: true }));

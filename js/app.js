@@ -1,4 +1,7 @@
-window.CustardPie = Ember.Application.create();
+window.CustardPie = Ember.Application.create({
+	LOG_TRANSITIONS:          true,
+  LOG_TRANSITIONS_INTERNAL: true
+});
 
 Ember.Handlebars.helper('formatScheduleDate', function(date){
 		var d_names = new Array("Sun", "Mon", "Tues",
