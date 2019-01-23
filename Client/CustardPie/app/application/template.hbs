@@ -1,0 +1,37 @@
+<!-- <link rel="stylesheet" href="css/main.css"> -->
+<div class="navbar nav-default header" role="navigation">
+  <div id="logo" class="navbar-header">
+    {{#link-to 'index'}}<img src="/assets/images/logo.png" class="expand" />{{/link-to}}
+  </div>
+  <div id="nav">
+    <ul>
+      <li>
+        {{#link-to 'index'}}Home{{/link-to}}
+      </li>
+      <li>
+        {{#link-to 'schedule'}}Schedule{{/link-to}}
+      </li>
+      <li>
+        {{#link-to 'playlist'}}Playlist{{/link-to}}
+      </li>
+      <li>
+        {{#link-to 'photos'}}Photos{{/link-to}}
+      </li>
+    </ul>
+  </div>
+  <div id="ticket">
+    {{#link-to 'schedule'}}<img src='/assets/images/ticket.png' />{{/link-to}}
+  </div>
+</div>
+
+<div id="content">
+  {{outlet}}
+</div>
+
+<div class="footer">
+  <div class="container">
+    <hr>
+    <h5><a href="mailto:mrfrancis5612@att.net">Email Us</a> or Call Michael Francis <span style="font-family: 'Arial'">(216)513-2217</span></h5>
+    <h5>&copy; 2016 Custard Pie Rock and Roll Experience All Rights Reserved</h5>
+  </div>
+</div>

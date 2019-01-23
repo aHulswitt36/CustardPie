@@ -1,0 +1,44 @@
+<div id="playlist">
+  <div id="playlistDiv">
+    <h1>Playlist</h1>
+    <ul id="playlistFilter">
+      <li><a class="filter" href="#A">A</a></li>
+      <li><a class="filter" href="#B">B</a></li>
+      <li><a class="filter" href="#C">C</a></li>
+      <li><a class="filter" href="#D">D</a></li>
+      <li><a class="filter" href="#E">E</a></li>
+      <li><a class="filter" href="#F">F</a></li>
+      <li><a class="filter" href="#G">G</a></li>
+      <li><a class="filter" href="#H">H</a></li>
+      <li><a class="filter" href="#I">I</a></li>
+      <li><a class="filter" href="#J">J</a></li>
+      <li><a class="filter" href="#K">K</a></li>
+      <li><a class="filter" href="#L">L</a></li>
+      <li><a class="filter" href="#M">M</a></li>
+      <li><a class="filter" href="#N">N</a></li>
+      <li><a class="filter" href="#O">O</a></li>
+      <li><a class="filter" href="#P">P</a></li>
+      <li><a class="filter" href="#Q">Q</a></li>
+      <li><a class="filter" href="#R">R</a></li>
+      <li><a class="filter" href="#S">S</a></li>
+      <li><a class="filter" href="#T">T</a></li>
+      <li><a class="filter" href="#U">U</a></li>
+      <li><a class="filter" href="#V">V</a></li>
+      <li><a class="filter" href="#W">W</a></li>
+      <li><a class="filter" href="#X">X</a></li>
+      <li><a class="filter" href="#Y">Y</a></li>
+      <li><a class="filter" href="#Z">Z</a></li>
+    </ul>
+
+    {{#each groupedByBandName as |group|}}
+      <div id={{group.group}} class="songlist">
+        {{#each group.content as |band|}}
+          <div class="band">
+            <h2>{{band.bandName}}</h2>
+            {{song-list songs=band.songs}}
+          </div>
+        {{/each}}
+      </div>
+    {{/each}}
+  </div>
+</div>

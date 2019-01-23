@@ -1,0 +1,28 @@
+<div id="schedule">
+  <div id="scheduleDiv">
+    <h1>Schedule</h1>
+    <div class="scheduleHeader">
+      <div class="scheduleDate">
+        <h4>Date</h4></div>
+      <div class="scheduleTime">
+        <h4>Time</h4></div>
+      <div class="scheduleVenue">
+        <h4>Venue</h4></div>
+      <div class="scheduleLocation">
+        <h4>Location</h4></div>
+    </div>
+    {{#each model as |event|}}
+      <div class="scheduleRow">
+        <div class="scheduleRowDate">
+          <h5>{{moment-format event.date "ddd, MMM Do"}}</h5>
+        </div>
+        <div class="scheduleRowTime">
+          <h5>{{event.time}}</h5></div>
+        <div class="scheduleRowVenue">
+          <h5>{{event.venue}}</h5></div>
+        <div class="scheduleRowLocation">
+          <h5>{{event.location}}</h5></div>
+      </div>
+    {{/each}}
+  </div>
+</div>

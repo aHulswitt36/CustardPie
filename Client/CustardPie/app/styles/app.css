@@ -1,0 +1,721 @@
+@import "normalize.css";
+
+@font-face{
+	font-family: 'Lato-Black';
+	src: url(/assets/fonts/Lato/Lato-Black.ttf);
+}
+@font-face{
+	font-family: 'Lato-Black';
+	src: url(/assets/fonts/Lato/Lato-Black.ttf);
+}
+@font-face{
+	font-family: 'Lato-BlackItalic';
+	src: url(/assets/fonts/Lato/Lato-BlackItalic.ttf);
+}
+@font-face{
+	font-family: 'Lato-Bold';
+	src: url(/assets/fonts/Lato/Lato-Bold.ttf);
+}
+@font-face{
+	font-family: 'Lato-BoldItalic';
+	src: url(/assets/fonts/Lato/Lato-BoldItalic.ttf);
+}
+@font-face{
+	font-family: 'Lato-Hairline';
+	src: url(/assets/fonts/Lato/Lato-Hairline.ttf);
+}
+@font-face{
+	font-family: 'Lato-HairlineItalic';
+	src: url(/assets/fonts/Lato/Lato-HairlineItalic.ttf);
+}
+@font-face{
+	font-family: 'Lato-Italic';
+	src: url(/assets/fonts/Lato/Lato-Italic.ttf);
+}
+@font-face{
+	font-family: 'Lato-Light';
+	src: url(/assets/fonts/Lato/Lato-Light.ttf);
+}
+@font-face{
+	font-family: 'Lato-LightItalic';
+	src: url(/assets/fonts/Lato/Lato-LightItalic.ttf);
+}
+@font-face{
+	font-family: 'Lato-Regular';
+	src: url(/assets/fonts/Lato/Lato-Regular.ttf);
+}
+@font-face{
+	font-family: 'Tinet';
+	src: url(/assets/fonts/Tinet/TungusFont_Tinet.ttf);
+}
+
+@font-face{
+	font-family: 'ArchRival';
+	src: url(/assets/fonts/ArchRival/SF_Arch_Rival.ttf);
+}
+
+
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body{
+	background: url(/assets/images/custardpie-bg.jpg) no-repeat black;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: 90%;
+	background-position-x: 50%;
+	-moz-background-position-x: 50%;
+}
+
+#content{
+	min-height: 100%;
+	margin-bottom: -75px;
+	position: relative;
+	top: -100px;
+}
+
+.footer, #content:after{
+	content: "";
+	display: block;
+}
+
+#content:after{
+	height: 100px;
+}
+
+
+#home #upcomingShows ul{
+	color: white;
+	list-style-type: none;
+	font-size: 15px;
+	margin-bottom: 5px;
+}
+#home #upcomingShows ul li {
+	padding-bottom: 5px;
+}
+#home #upcomingShows ul li:last-child{
+	padding-bottom: 0px;
+}
+#home #upcomingShows a{
+	float: right;
+	margin-right: 60px;
+	color: red;
+	font-size: 14px;
+	text-decoration: none;
+}
+#home #upcomingShows p{
+	font-family: 'Lato-Regular';
+	color: white;
+	font-size: 12px;
+	width: 471px;
+	margin-left: 305px;
+	top: 450px;
+}
+
+#scheduleDiv h1, #playlistDiv h1, #photoDiv h1{
+	padding-top: 65px;
+	padding-left: 25px;
+}
+#schedule h4, #playlist h4{
+	font-family: "ArchRival";
+	color: white;
+	font-size: 26px;
+}
+#schedule h5, #playlist h5{
+	font-family: "ArchRival";
+	color: white;
+	margin-left: 0px !important;
+	font-size: 17px;
+}
+.scheduleDate{
+	margin-left: 25px;
+	display: inline-block;
+	width: 15%;
+	margin-right: 5%;
+}
+.scheduleTime{
+	display: inline-block;
+	width: 11%;
+}
+.scheduleVenue{
+	display: inline-block;
+	width: 31%;
+}
+.scheduleLocation{
+	display: inline-block;
+}
+
+
+.band ul{
+	list-style-type: none;
+	color: white;
+	padding-left: 10px;
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 640px) {
+	body{
+		background: black;
+	}
+
+	.header {
+		background: url(/assets/images/header.png) repeat-x;
+		min-height: 120px;
+		width: 94%;
+		background-size: 100px;
+		position: relative;
+		z-index: 100;
+		left: 3%;
+	}
+
+	#logo {
+		top: 20%;
+		left: 15%;
+		position: absolute;
+		z-index: 1;
+	}
+
+	img.expand {
+		width: 80%;
+	}
+
+	#nav{
+		display: none;
+	}
+
+	#ticket{
+		display: none;
+	}
+
+	h5{
+		font-family: "ArchRival";
+		color: white;
+		font-size: 9px;
+	}
+
+	#content{
+		top: -67px;
+	}
+
+	.mainPic {
+		width: 88%;
+		height: auto;
+		max-height: 160px;
+		border: 6px solid;
+		border-color: #242323;
+		position: relative;
+		left: 6%;
+	}
+
+	#home h2, #home h1{
+		display: none;
+	}
+
+	#home #upcomingShows {
+		display: none;
+	}
+
+	#upcomingShowsMobile, #playlistMobile, #contactUs{
+		position: relative;
+		left: 3%;
+		margin-top: 3%;
+		width: 95%;
+		height: 60px;
+		border: 1px solid rgb(150, 150, 150);
+		border-radius: 10px;
+		-webkit-border-radius: 10px;
+		webkit-box-shadow: 3px 3px 6px 0px rgb(150, 150, 150);
+		-moz-box-shadow: 3px 3px 6px 0px rgb(150, 150, 150);
+		box-shadow: 3px 3px 6px 0px rgb(150, 150, 150);
+	}
+
+	.mobileLink{
+		color: #fff;
+		font-family: 'ArchRival';
+		font-size: 22px;
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+
+	.mobileText{
+		position: relative;
+		left: 23%;
+		top: 20%;
+	}
+
+	#bandDesc, #bandPlaylist, #bandMembers {
+		display: none;
+	}
+
+	#schedule, #playlist {
+		position: relative;
+		top: 20px;
+	}
+
+	#schedule h1, #playlist h1{
+		font-family: 'ArchRival';
+		color: white;
+		position: relative;
+		padding-top: 0;
+	}
+
+	.scheduleHeader{
+		display: none;
+	}
+
+	.scheduleRow, .band{
+		text-align: center;
+		border-bottom: 1px solid rgb(150, 150, 150);
+		border-radius: 10px;
+		-webkit-border-radius: 10px;
+		webkit-box-shadow: 3px 3px 6px 0px rgb(150, 150, 150);
+		-moz-box-shadow: 3px 3px 6px 0px rgb(150, 150, 150);
+		box-shadow: 3px 3px 6px 0px rgb(150, 150, 150);
+		padding-top: 5px;
+	}
+
+	.scheduleRow:last-child{
+		border: none;
+		box-shadow: none;
+	}
+
+	.scheduleRowDate, .scheduleRowTime{
+		display: inline-block;
+	}
+
+	#playlistFilter {
+		display: none;
+	}
+
+	.songlist{
+		position: relative;
+		text-align: center;
+		display: inline-block;
+		width: 100%;
+	}
+
+	.band h2{
+		font-family: 'ArchRival';
+		color: white;
+		font-size: 26px;
+	}
+
+	#contactDiv{
+		position: relative;
+		text-align: center;
+		top: 30px;
+	}
+
+	#contactDiv h2{
+		font-family: 'ArchRival';
+		color: white;
+		font-size: 26px;
+	}
+}
+
+@media only screen
+and (min-device-width : 900px){
+
+	hr {
+		height: 6px;
+		width: 94%;
+		background-color: #7DF3F3;
+		border: none;
+	}
+
+	.header{
+		background: url(/assets/images/header.png) repeat-x;
+		text-align: center;
+		min-height: 120px;
+		margin: 0 0 0 40px;
+		width: 91%;
+		background-size: 120px;
+		position: relative;
+		z-index: 100;
+	}
+
+	#divSmallPhotos{
+		position: relative;
+		top: 50%;
+		left: 5%;
+	}
+
+	.thumbnailItem {
+	    width: 75px;
+	    height: 75px;
+	    float: left;
+	    margin-right: 10px;
+	    cursor:pointer;
+	}
+
+	.thumbnailItem.is-selected {
+	    border: 2px solid #000;
+	    width: 100px;
+	    height: 100px;
+	}
+
+	.thumbnailViewList {
+	    position: absolute;
+	    bottom: 10px;
+	    left: 10px;
+	    right: 10px;
+	    height: 100px;
+	}
+
+	#logo {
+		top: 20%;
+		left: 15.75%;
+		position: absolute;
+	  z-index: 1;
+	}
+
+	img.expand{
+		width: 25em;
+	}
+
+	#ticket{
+		float: left;
+		left: 7.75%;
+		top: 90px;
+		z-index: 2;
+		position: absolute;
+	}
+	#ticket a img {
+		width: 85%;
+	}
+
+	#nav{
+		float: right;
+		position: absolute;
+		top: 40px;
+		left: 55%;
+	}
+
+	#nav ul{
+		clear: both;
+		float: right;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		list-style: none;
+		position: relative;
+		z-index: 1000;
+	}
+
+	#nav ul li {
+		display: inline-block;
+	}
+
+	#nav ul li a{
+		font-family: 'ArchRival';
+		font-size: 23px;
+		margin-right: 20px;
+		color: #fff;
+		text-decoration: none;
+	}
+	#nav ul li a:hover{
+		color: #7DF3F3;
+	}
+
+	#mainPicSlider{
+		position: relative;
+		margin-left: 16%;
+		margin-right: 14%;
+	}
+	.mainPic{
+		width: 100%;
+		height: auto;
+		max-height: 33.5em;
+		/*margin-left: 16%;*/
+		border: 12px solid;
+		border-color: #242323;
+	}
+	#bandPicBg {
+		z-index: 1;
+		position: relative;
+	}
+	#home h2{
+		font-family: 'ArchRival';
+		margin-top: 15px;
+		color: #7DF3F3;
+		font-weight: normal;
+		font-size: 40px;
+		height: 16px;
+	}
+	h1{
+		font-family: 'ArchRival';
+		margin-top: 0px;
+		color: #7DF3F3;
+		font-weight: normal;
+		font-size: 70px;
+	}
+
+	#home{
+		position: relative;
+		top: 66px;
+		background-color: #000000;
+		opacity: 0.8;
+	}
+
+	#home h3{
+		font-family: 'ArchRival';
+		margin-top: 10px;
+		color: #7DF3F3;
+		font-weight: normal;
+		font-size: 28px;
+		height: 16px;
+	}
+
+	#home h4{
+		font-family: 'ArchRival';
+		font-size: 14px;
+	}
+
+	h5{
+		font-family: "ArchRival";
+		color: white;
+		margin-left: 130px;
+		font-size: 11px;
+	}
+
+	#home #bandDesc{
+		color: white;
+		font-size: 14px;
+		margin-left: 21%;
+		margin-right: 41%;
+	}
+	#home #bandDesc h1{
+		margin-top: 25px;
+	}
+
+	#home #bandMembers{
+		color: white;
+		font-size: 10px;
+		position: relative;
+		display: inline-block;
+		left: 21%;
+	}
+	#home #upcomingShows{
+		background: url(/assets/images/upcomingshows.png) no-repeat;
+		position: absolute;
+		background-size: 100%;
+		width: 290px;
+		height: 260px;
+		z-index: 0;
+		top: -15px;
+		left: 60%;
+		font-family: 'ArchRival';
+	}
+	#home #upcomingShows h3{
+		font-family: 'ArchRival';
+		margin-top: 65px;
+		color: #7DF3F3;
+		text-align: center;
+		font-weight: normal;
+		font-size: 27px;
+		height: 20px;
+	}
+
+	#home #bandMembers img{
+		width: 200px;
+		/*border: 9px solid;*/
+		border-color: #242323;
+		margin-right: 15px;
+	}
+
+	#home #bandMembers .memberRow{
+		margin-top: 35px;
+	}
+
+	#upcomingShowsMobile, #playlistMobile, #contactUs{
+		display: none;
+	}
+
+	.memberRow .member{
+		display: inline-block;
+	}
+
+	.memberRow .member h4{
+		text-align: center;
+	}
+
+	#home #bandPlaylist{
+		background: url(/assets/images/playlist.png) no-repeat;
+		position: absolute;
+		z-index: 0;
+		left: 65%;
+		top: -16%;
+		font-family: 'ArchRival';
+		display: inline-block;
+	}
+
+	#bandPlaylist h3{
+		margin-left: 30px;
+	}
+
+	#bandPlaylist h4{
+		font-size: 15px;
+		margin: 0px !important;
+	}
+
+	#bandPlaylist #smallPlaylist{
+		color: white;
+		margin-left: 30px;
+		margin-top: 20px;
+	}
+
+	#bandPlaylist #smallPlaylist ul{
+		font-family: "Lato-Regular";
+		font-size: 10.5px;
+		list-style: none;
+	}
+	#bandPlaylist #smallPlaylist ul{
+		margin: 0 0 0 25px;
+	}
+	#bandPlaylist #smallPlaylist ul li{
+		margin-left: -20px;
+	}
+
+	#linkPlaylist{
+		margin-left: 100px;
+		color: red;
+	}
+
+	#schedule, #playlist, #photos, #member, #members{
+		position: relative;
+		top: 15px;
+	}
+
+	#scheduleDiv, #playlistDiv, #photoDiv, #memberDiv{
+		background: url(/assets/images/int-background.png) no-repeat;
+		background-size: 100%;
+		width: 70%;
+		min-height: 600px;
+		margin-left: 15%;
+		padding-top: 85px;
+	}
+
+	.scheduleRowDate{
+		margin-left: 25px;
+		display: inline-block;
+		margin-right: 5%;
+		width: 16%;
+		word-wrap: break-word;
+	}
+	.scheduleRowTime{
+		display: inline-block;
+		width: 11%;
+	}
+	.scheduleRowVenue{
+		display: inline-block;
+		width: 31%;
+	}
+	.scheduleRowLocation{
+		display: inline-block;
+		word-wrap: break-word;
+		width: 30%;
+	}
+
+	#playlistFilter{
+		list-style-type: none;
+	}
+	#playlistFilter li{
+		display: inline-block;
+		font-family: "ArchRival";
+		font-size: 22px;
+		margin-right: 10px;
+	}
+	#playlistFilter li a{
+		color: #fff;
+	}
+	#playlistFilter li a:hover{
+	 	color: #7DF3F3;
+	}
+
+	.band{
+		display: inline-block;
+		vertical-align: top;
+		padding-right: 25px;
+	}
+
+	#playlistDiv h2{
+		font-family: "ArchRival";
+		color: white;
+		font-size: 25px;
+	}
+	.songlist{
+		margin-left: 25px;
+	}
+
+	#spnLargePhoto{
+		z-index: 1;
+		position: relative;
+		left: 35px;
+		background-color: #ffff;
+	}
+	.largePic{
+		height: 420px;
+		width: 91%;
+		border: 12px solid;
+		border-color: #242323;
+	}
+
+	.divSmallImg{
+		position: relative;
+		top: 30px;
+		left: 35px;
+		display: inline-block;
+		padding: 0 24px 24px 0;
+		width: 28%;
+	}
+
+	.divSmallImg img{
+		width: 100%;
+		border: 2px solid;
+	}
+
+	img.thumbnailItem {
+	    cursor:pointer;
+	}
+
+	#selectedPhoto{
+
+	}
+
+	.selectedPhotoItem{
+		display: inline-block;
+		margin-left: 15%;
+	}
+
+	.selectedPhotoItem img {
+	    border-radius: 25px;
+	    -moz-bottomleft: 25px;
+	    width: 90%;
+	}
+
+	#previousPhoto, #nextPhoto{
+		background-color: black;
+		height: 430px;
+		width: 15%;
+		display: inline-block;
+	}
+
+	#previousPhoto{
+		float: left;
+	}
+
+	#nextPhoto{
+		float: right;
+	}
+
+	#memberDiv p{
+		color: white;
+		padding: 0 10%;
+	}
+}

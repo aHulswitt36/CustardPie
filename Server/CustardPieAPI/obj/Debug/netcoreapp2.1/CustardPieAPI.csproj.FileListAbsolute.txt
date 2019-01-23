@@ -1,0 +1,17 @@
+D:\Sandbox\CustardPieAPI\CustardPieAPI\obj\Debug\netcoreapp2.1\CustardPieAPI.csprojAssemblyReference.cache
+D:\Sandbox\CustardPieAPI\CustardPieAPI\obj\Debug\netcoreapp2.1\CustardPieAPI.csproj.CoreCompileInputs.cache
+D:\Sandbox\CustardPieAPI\CustardPieAPI\obj\Debug\netcoreapp2.1\CustardPieAPI.RazorAssemblyInfo.cache
+D:\Sandbox\CustardPieAPI\CustardPieAPI\obj\Debug\netcoreapp2.1\CustardPieAPI.RazorAssemblyInfo.cs
+D:\Sandbox\CustardPieAPI\CustardPieAPI\obj\Debug\netcoreapp2.1\CustardPieAPI.AssemblyInfoInputs.cache
+D:\Sandbox\CustardPieAPI\CustardPieAPI\obj\Debug\netcoreapp2.1\CustardPieAPI.AssemblyInfo.cs
+D:\Sandbox\CustardPieAPI\CustardPieAPI\bin\Debug\netcoreapp2.1\CustardPieAPI.deps.json
+D:\Sandbox\CustardPieAPI\CustardPieAPI\bin\Debug\netcoreapp2.1\CustardPieAPI.runtimeconfig.json
+D:\Sandbox\CustardPieAPI\CustardPieAPI\bin\Debug\netcoreapp2.1\CustardPieAPI.runtimeconfig.dev.json
+D:\Sandbox\CustardPieAPI\CustardPieAPI\bin\Debug\netcoreapp2.1\CustardPieAPI.dll
+D:\Sandbox\CustardPieAPI\CustardPieAPI\bin\Debug\netcoreapp2.1\CustardPieAPI.pdb
+D:\Sandbox\CustardPieAPI\CustardPieAPI\bin\Debug\netcoreapp2.1\CustardPieDal.dll
+D:\Sandbox\CustardPieAPI\CustardPieAPI\bin\Debug\netcoreapp2.1\CustardPieDal.pdb
+D:\Sandbox\CustardPieAPI\CustardPieAPI\obj\Debug\netcoreapp2.1\CustardPieAPI.RazorTargetAssemblyInfo.cache
+D:\Sandbox\CustardPieAPI\CustardPieAPI\obj\Debug\netcoreapp2.1\CustardPieAPI.csproj.CopyComplete
+D:\Sandbox\CustardPieAPI\CustardPieAPI\obj\Debug\netcoreapp2.1\CustardPieAPI.dll
+D:\Sandbox\CustardPieAPI\CustardPieAPI\obj\Debug\netcoreapp2.1\CustardPieAPI.pdb

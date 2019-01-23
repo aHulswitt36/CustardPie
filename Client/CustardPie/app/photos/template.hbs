@@ -1,0 +1,16 @@
+<div id="photos">
+  <div id="photoDiv">
+    <h1>Photos</h1> {{outlet}}
+
+    <div id="divSmallPhotos">
+      {{#each model as |photo|}}
+        <div class="divSmallImg">
+          {{#link-to 'photos.selectedPhoto' photo}}
+            <!-- {{view CustardPie.PhotoThumbnailView srcBinding="photo.source" contentBinding="photo"}} -->
+            <img src={{photo.source}} alt={{photo.title}}  />
+          {{/link-to}}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
