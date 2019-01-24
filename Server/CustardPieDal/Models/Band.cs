@@ -1,7 +1,6 @@
 using System.Collections.Generic;
-using CustardPieAPI.Models;
 
-namespace CustardPieAPI.Models
+namespace CustardPieDal.Models
 {
     public class Band
     {

@@ -1,4 +1,4 @@
-namespace CustardPieAPI.Models
+namespace CustardPieDal.Models
 {
     public class Song
     {

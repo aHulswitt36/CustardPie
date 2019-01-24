@@ -7,3 +7,12 @@ D:\Sandbox\CustardPieAPI\CustardPieDal\obj\Debug\netstandard2.0\CustardPieDal.As
 D:\Sandbox\CustardPieAPI\CustardPieDal\obj\Debug\netstandard2.0\CustardPieDal.dll
 D:\Sandbox\CustardPieAPI\CustardPieDal\obj\Debug\netstandard2.0\CustardPieDal.pdb
 D:\Sandbox\CustardPieAPI\CustardPieDal\obj\Debug\netstandard2.0\CustardPieDal.csprojAssemblyReference.cache
+C:\Sandbox\CustardPie\Server\CustardPieDal\bin\Debug\netstandard2.0\CustardPieDal.deps.json
+C:\Sandbox\CustardPie\Server\CustardPieDal\bin\Debug\netstandard2.0\CustardPieDal.dll
+C:\Sandbox\CustardPie\Server\CustardPieDal\bin\Debug\netstandard2.0\CustardPieDal.pdb
+C:\Sandbox\CustardPie\Server\CustardPieDal\obj\Debug\netstandard2.0\CustardPieDal.csprojAssemblyReference.cache
+C:\Sandbox\CustardPie\Server\CustardPieDal\obj\Debug\netstandard2.0\CustardPieDal.csproj.CoreCompileInputs.cache
+C:\Sandbox\CustardPie\Server\CustardPieDal\obj\Debug\netstandard2.0\CustardPieDal.AssemblyInfoInputs.cache
+C:\Sandbox\CustardPie\Server\CustardPieDal\obj\Debug\netstandard2.0\CustardPieDal.AssemblyInfo.cs
+C:\Sandbox\CustardPie\Server\CustardPieDal\obj\Debug\netstandard2.0\CustardPieDal.dll
+C:\Sandbox\CustardPie\Server\CustardPieDal\obj\Debug\netstandard2.0\CustardPieDal.pdb
