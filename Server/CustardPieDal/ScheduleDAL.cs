@@ -1,47 +1,52 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using CustardPieDal.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CustardPieDal
 {
     public class ScheduleDAL : IScheduleDal
     {
-        public int DeleteSchedule(int id)
+        private readonly CustardPieDbContext _context;
+
+        public ScheduleDAL(CustardPieDbContext context){
+            _context = context;
+        } 
+
+        public async Task<int> DeleteSchedule(int id)
         {
-            return 1;
+            var schedule = await _context.Schedule.AsNoTracking().SingleOrDefaultAsync(s => s.Id == id);
+            _context.Schedule.Remove(schedule);
+            return await _context.SaveChangesAsync();
         }
 
-        public int InsertSchedule(Schedule schedule){
-            return 1;
+        public async Task<int> InsertSchedule(Schedule schedule){
+            var inserted = await _context.Schedule.AddAsync(schedule);
+            return await _context.SaveChangesAsync();
         }
 
-        public Schedule GetSchedule(int id)
+        public async Task<Schedule> GetSchedule(int id)
         {
-            return new Schedule()
-            {
-                Id = 1,
-                Venue = "Wing Warehouse", 
-                Location = "1111 Broadview Rd. Northfield, Ohio 44129", 
-                Date = new DateTime(2018, 7, 20, 9, 0, 0, DateTimeKind.Local)
-            };
+            var schedule = await _context.Schedule.AsNoTracking().SingleOrDefaultAsync(s => s.Id == id);
+            return schedule;
         }
 
-        IEnumerable<Schedule> IScheduleDal.GetSchedules()
+        public async Task<IEnumerable<Schedule>> GetSchedules()
         {
-            var events = new List<Schedule>();
-            events.Add(new Schedule()
-            {
-                Id = 1,
-                Venue = "Parma Tavern", 
-                Location = "1111 Broadview Rd. Parma, Ohio 44129", 
-                Date = new DateTime(2018, 5, 20, 9, 0, 0, DateTimeKind.Local)
-            });
-            return events;
-        }
+            var events = _context.Schedule.AsNoTracking();
 
-        public int UpdateSchedule(Schedule schedule)
-        {
-            return 1;
+            return await events.ToListAsync();
+        }
+        
+        public async Task<int> UpdateSchedule(Schedule schedule)
+        {   
+            var scheduleEvent = await _context.Schedule.AsNoTracking().SingleOrDefaultAsync(s => s.Id == schedule.Id);
+            scheduleEvent.Date = schedule.Date;
+            scheduleEvent.Location = schedule.Location;
+            scheduleEvent.Venue = schedule.Venue;
+            
+            return await _context.SaveChangesAsync();;
         }
     }
 }

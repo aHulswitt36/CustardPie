@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/CustardPieAPI/bin/Debug/netcoreapp2.1/CustardPieAPI.dll",
+            "program": "${workspaceFolder}/CustardPieAPI/bin/Debug/netcoreapp2.2/CustardPieAPI.dll",
             "args": [],
             "cwd": "${workspaceFolder}/CustardPieAPI",
             "stopAtEntry": false,

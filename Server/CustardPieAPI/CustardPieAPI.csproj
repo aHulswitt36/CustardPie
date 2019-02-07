@@ -2,18 +2,15 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
-
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\"/>
   </ItemGroup>
-
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.*" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.*"/>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" PrivateAssets="All"/>
-  </ItemGroup>  
-
-  <ItemGroup>
-    <ProjectReference Include="..\CustardPieDal\CustardPieDal.csproj" />
+    <PackageReference Include="Microsoft.AspNet.WebApi" Version="5.2.3"/>
   </ItemGroup>
-
+  <ItemGroup>
+    <ProjectReference Include="..\CustardPieDal\CustardPieDal.csproj"/>
+  </ItemGroup>
 </Project>

@@ -12,7 +12,7 @@ namespace CustardPieDal
         public DbSet<Song> Songs{get;set;}
 
         protected override void OnConfiguring(DbContextOptionsBuilder builder) 
-            => builder.UseNpgsql("Host=::1;Database=CustardPie;Username=aarron;Password=Fishing!729");
+            => builder.UseNpgsql("Host=localhost;Database=CustardPie;Username=aarron;Password=Fishing!729");
 
     }
 }
