@@ -33,7 +33,8 @@ namespace CustardPieAPI.Controllers
                 return BadRequest();
 
             var inserted = await _scheduleDal.InsertSchedule(schedule);
-            return Ok(new { message = inserted > 0 ? "Successfully created schedule item" : "Something went wrong when creating schedule"});
+            
+            return new OkObjectResult(inserted);
         }
 
         [HttpPut]
@@ -42,15 +43,15 @@ namespace CustardPieAPI.Controllers
                 return BadRequest();
 
             var updated = await _scheduleDal.UpdateSchedule(value);
-            return Ok(new {message = updated > 0 ? "Successfully updated schedule item" : "Something went wrong when updating schedule item"});
+            return new OkObjectResult(updated);
         }
 
         [HttpDelete("{id}")]
-        public async Task<bool> Delete(int id){
+        public async Task<IActionResult> Delete(int id){
             var deleted = await _scheduleDal.DeleteSchedule(id);
             if(deleted == 0)
-                return false;
-            return true;
+                return new OkObjectResult(false);
+            return new OkObjectResult(true);
             //return deleted > 0;
         }
     }
