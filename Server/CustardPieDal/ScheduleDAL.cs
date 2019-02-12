@@ -21,7 +21,8 @@ namespace CustardPieDal
             return await _context.SaveChangesAsync();
         }
 
-        public async Task<int> InsertSchedule(Schedule schedule){
+        public async Task<int> InsertSchedule(Schedule schedule)
+        {
             var inserted = await _context.Schedule.AddAsync(schedule);
             return await _context.SaveChangesAsync();
         }
@@ -46,7 +47,7 @@ namespace CustardPieDal
             scheduleEvent.Location = schedule.Location;
             scheduleEvent.Venue = schedule.Venue;
             
-            return await _context.SaveChangesAsync();;
+            return await _context.SaveChangesAsync();
         }
     }
 }
